@@ -50,7 +50,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     private function prepareBindings(array $bindings)
     {
-        return array_map(function($item) {
+        return array_map(function ($item) {
             return is_numeric($item) ? $item : "'{$item}'";
         }, $bindings);
     }
