@@ -33,3 +33,5 @@ Provides database queries profiling for Laravel http and console applications.
     Or `-vvv` option for console profiling:
     
     ![Console example](doc/img/example-console.png)
+    
+    Note, that profiler is enabled only for `local` environment!
