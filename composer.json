@@ -10,11 +10,12 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "illuminate/support": "^5.2"
     },
     "autoload": {
         "psr-4": {
-            "Illuminated\\Database\\": "src/"
+            "Illuminated\\Database\\Profiler\\": "src/"
         }
     }
 }
