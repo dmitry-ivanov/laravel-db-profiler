@@ -16,4 +16,20 @@ Provides database queries profiling for Laravel http and console applications.
     composer require illuminated/db-profiler
     ```
 
-2. ...
+2. Add `ServiceProvider` into `config/app.php`:
+    ```php
+    'providers' => [
+        // ...
+        Illuminated\Database\Profiler\ServiceProvider::class,
+    ],
+    ```
+
+3. Now you can use profiler!
+
+Use `vvv` request parameter for http profiling:
+
+...
+
+Or `-vvv` option for console profiling:
+
+...
