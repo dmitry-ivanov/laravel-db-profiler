@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    private static $counter = 0;
+    private static $counter = 1;
 
     public function register()
     {
