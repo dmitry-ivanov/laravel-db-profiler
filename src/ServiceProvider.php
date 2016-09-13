@@ -9,6 +9,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     private static $counter = 0;
 
+    public function register() {}
+
     public function boot()
     {
         if (!$this->isEnabled()) {
