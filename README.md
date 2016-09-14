@@ -6,7 +6,7 @@
 Provides database queries profiling for Laravel http and console applications.
 
 ## Requirements
-- `PHP >=5.5.9`
+- `PHP >=5.6.4`
 - `Laravel >=5.2`
 
 ## Usage
