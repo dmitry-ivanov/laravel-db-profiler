@@ -1,6 +1,6 @@
 # Laravel database profiler
 
-[![StyleCI](https://styleci.io/repos/68023936/shield)](https://styleci.io/repos/68023936)
+[![StyleCI](https://styleci.io/repos/68023936/shield?style=flat)](https://styleci.io/repos/68023936)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b/mini.png)](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b)
 
 Provides database queries profiling for Laravel http and console applications.
