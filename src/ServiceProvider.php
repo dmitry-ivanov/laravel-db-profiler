@@ -49,7 +49,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $sql = $query->sql;
         $bindings = $this->prepareBindings($query->bindings);
-        return str_replace_array('\?', $bindings, $sql);
+        return str_replace_array('?', $bindings, $sql);
     }
 
     private function prepareBindings(array $bindings)
