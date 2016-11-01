@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Illuminated\\Database\\Profiler\\": "src/"
+            "Illuminated\\Database\\": "src/"
         }
     }
 }
