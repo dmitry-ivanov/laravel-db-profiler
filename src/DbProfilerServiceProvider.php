@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminated\Database\Profiler;
+namespace Illuminated\Database;
 
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
