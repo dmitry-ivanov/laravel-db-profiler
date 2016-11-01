@@ -4,8 +4,9 @@ namespace Illuminated\Database\Profiler;
 
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter = 1;
 
