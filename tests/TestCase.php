@@ -4,15 +4,22 @@ use Illuminated\Database\DbProfilerServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
+    protected function getEnvironmentSetUp($app)
+    {
+        $this->setUpDatabase();
+        $this->setUpRoutes();
+    }
+
     protected function getPackageProviders($app)
     {
         return [DbProfilerServiceProvider::class];
     }
 
-    protected function getEnvironmentSetUp($app)
+    protected function setUp()
     {
-        $this->setUpDatabase();
-        $this->setUpRoutes();
+        parent::setUp();
+
+        $this->loadMigrations();
     }
 
     private function setUpDatabase()
@@ -23,5 +30,13 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function setUpRoutes()
     {
         require 'fixture/routes/web.php';
+    }
+
+    private function loadMigrations()
+    {
+        $this->loadMigrationsFrom([
+            '--database' => 'testing',
+            '--realpath' => realpath(__DIR__ . '/fixture/database/migrations'),
+        ]);
     }
 }
