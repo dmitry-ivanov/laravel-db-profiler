@@ -1,15 +1,16 @@
 <?php
 
+use Illuminate\Foundation\Application;
 use Illuminated\Database\DbProfilerServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-    protected function getPackageProviders()
+    protected function getPackageProviders(Application $app)
     {
         return [DbProfilerServiceProvider::class];
     }
 
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp(Application $app)
     {
         $this->setUpRoutes();
     }
