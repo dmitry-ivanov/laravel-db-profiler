@@ -11,7 +11,13 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function getEnvironmentSetUp($app)
     {
+        $this->setUpDatabase();
         $this->setUpRoutes();
+    }
+
+    private function setUpDatabase()
+    {
+        config(['database.default' => 'testing']);
     }
 
     private function setUpRoutes()
