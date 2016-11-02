@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    $posts = Post::all();
-    dump($posts);
-    return 'Hello World!';
+    Post::all();
+    Post::find(1);
+    Post::find(2);
+    Post::find(3);
+
+    return 'Home page!';
 });
