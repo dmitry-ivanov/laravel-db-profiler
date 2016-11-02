@@ -4,16 +4,15 @@ use Illuminated\Database\DbProfilerServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-    protected function getEnvironmentSetUp($app)
-    {
-        $this->setUpFixture();
-        $this->setUpDatabase();
-        $this->setUpRoutes();
-    }
-
     protected function getPackageProviders($app)
     {
         return [DbProfilerServiceProvider::class];
+    }
+
+    protected function getEnvironmentSetUp($app)
+    {
+        $this->setUpDatabase();
+        $this->setUpRoutes();
     }
 
     protected function setUp()
@@ -23,11 +22,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->setUpFactories();
         $this->loadMigrations();
         $this->seedDatabase();
-    }
-
-    private function setUpFixture()
-    {
-        require_once 'fixture/app/Post.php';
     }
 
     private function setUpDatabase()
