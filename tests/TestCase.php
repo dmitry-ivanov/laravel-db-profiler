@@ -51,11 +51,4 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         factory(Post::class, 10)->create();
     }
-
-    protected function setApplicationEnvironment($env)
-    {
-        $this->app->detectEnvironment(function () use ($env) {
-            return $env;
-        });
-    }
 }
