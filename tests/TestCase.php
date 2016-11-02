@@ -6,6 +6,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected function getEnvironmentSetUp($app)
     {
+        $this->setUpFixture();
         $this->setUpDatabase();
         $this->setUpRoutes();
     }
@@ -20,6 +21,11 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         parent::setUp();
 
         $this->loadMigrations();
+    }
+
+    private function setUpFixture()
+    {
+        require_once 'fixture/app/Post.php';
     }
 
     private function setUpDatabase()
