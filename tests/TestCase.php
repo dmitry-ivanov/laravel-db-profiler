@@ -20,7 +20,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         parent::setUp();
 
+        $this->setUpFactories();
         $this->loadMigrations();
+        $this->seedDatabase();
     }
 
     private function setUpFixture()
@@ -38,11 +40,21 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         require 'fixture/routes/web.php';
     }
 
+    private function setUpFactories()
+    {
+        $this->withFactories(__DIR__ . '/fixture/database/factories');
+    }
+
     private function loadMigrations()
     {
         $this->loadMigrationsFrom([
             '--database' => 'testing',
-            '--realpath' => realpath(__DIR__ . '/fixture/database/migrations'),
+            '--realpath' => __DIR__ . '/fixture/database/migrations',
         ]);
+    }
+
+    private function seedDatabase()
+    {
+        factory(Post::class, 10)->create();
     }
 }
