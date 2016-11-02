@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
+    $posts = Post::all();
+    dump($posts);
     return 'Hello World!';
 });
