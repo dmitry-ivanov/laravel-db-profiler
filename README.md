@@ -34,10 +34,15 @@ Provides database queries profiling for Laravel http and console applications.
 
 3. Now you can use database profiler!
 
-    Use `vvv` request parameter for http profiling:
-    
-    ![Http example](doc/img/example-http.png)
-    
-    Or `-vvv` option for console profiling:
-    
-    ![Console example](doc/img/example-console.png)
+
+## HTTP Profiling
+
+Use `vvv` request parameter for http profiling:
+
+![Http example](doc/img/example-http.png)
+
+## Console Profiling
+
+Use `-vvv` option for console profiling:
+
+![Console example](doc/img/example-console.png)
