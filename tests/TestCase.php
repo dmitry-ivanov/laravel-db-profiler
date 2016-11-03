@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Foundation\Application;
+use Illuminated\Database\DbProfilerServiceProvider;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
+    private $env;
+
     protected function setUp()
     {
         parent::setUp();
@@ -45,5 +49,29 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     public function assertDatabaseQueriesAreNotListened()
     {
         $this->assertFalse(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
+    }
+
+    protected function local()
+    {
+        $this->env = 'local';
+        return $this;
+    }
+
+    protected function notLocal()
+    {
+        $this->env = 'production';
+        return $this;
+    }
+
+    abstract protected function withVvv();
+
+    protected function boot()
+    {
+        $app = Mockery::mock(Application::class);
+        $app->shouldReceive('isLocal')->once()->withNoArgs()->andReturn(($this->env == 'local'));
+        $app->shouldReceive('runningInConsole')->zeroOrMoreTimes()->withNoArgs()->andReturn(false);
+
+        $provider = new DbProfilerServiceProvider($app);
+        $provider->boot();
     }
 }
