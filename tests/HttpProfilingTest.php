@@ -2,6 +2,11 @@
 
 class HttpProfilingTest extends TestCase
 {
+    protected function runningInConsole()
+    {
+        return false;
+    }
+
     protected function withVvv()
     {
         request()['vvv'] = true;

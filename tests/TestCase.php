@@ -63,13 +63,15 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         return $this;
     }
 
+    abstract protected function runningInConsole();
+
     abstract protected function withVvv();
 
     protected function boot()
     {
         $app = Mockery::mock(Application::class);
         $app->shouldReceive('isLocal')->once()->withNoArgs()->andReturn(($this->env == 'local'));
-        $app->shouldReceive('runningInConsole')->zeroOrMoreTimes()->withNoArgs()->andReturn(false);
+        $app->shouldReceive('runningInConsole')->zeroOrMoreTimes()->withNoArgs()->andReturn($this->runningInConsole());
 
         $provider = new DbProfilerServiceProvider($app);
         $provider->boot();
