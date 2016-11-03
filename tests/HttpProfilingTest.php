@@ -3,22 +3,22 @@
 class HttpProfilingTest extends TestCase
 {
     /** @test */
-    public function it_is_disabled_for_local_environment_if_no_vvv_request_param_was_set()
+    public function it_is_disabled_if_profiling_was_not_requested()
     {
-        // $this->assertTrue($this->app->isLocal());
-        // $this->visit('/');
-        //
-        // $this->see('Home page!');
-        // $this->dontSee('select * from posts');
+        $this->assertEnvironmentNotEquals('production');
+        $this->visit('/');
+
+        $this->see('Home page!');
+        $this->dontSee('select * from posts');
     }
 
     /** @test */
-    public function it_is_enabled_for_local_environment_if_vvv_request_param_is_set()
+    public function it_is_enabled_if_profiling_was_requested()
     {
-        // $this->assertTrue($this->app->isLocal());
-        // $this->visit('/?vvv')->dump();
-        //
-        // $this->see('Home page!');
-        // $this->see('select * from posts');
+        $this->assertEnvironmentNotEquals('production');
+        $this->visit('/?vvv');
+
+        $this->see('Home page!');
+        $this->dontSee('select * from posts');
     }
 }
