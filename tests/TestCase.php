@@ -51,4 +51,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         factory(Post::class, 10)->create();
     }
+
+    public function assertEnvironmentEquals($env)
+    {
+        $this->assertTrue($this->app->environment($env));
+    }
 }
