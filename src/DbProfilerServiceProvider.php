@@ -12,11 +12,20 @@ class DbProfilerServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        if (!$this->isEnabled()) {
+        if ($this->app->environment('production')) {
+            return;
+        }
+
+        $shouldProceed = $this->app->runningUnitTests() ? true : $this->profilingRequested();
+        if (!$shouldProceed) {
             return;
         }
 
         DB::listen(function (QueryExecuted $query) {
+            if (!$this->profilingRequested()) {
+                return;
+            }
+
             $i = self::tickCounter();
             $sql = $this->getSqlWithAppliedBindings($query);
             $time = $query->time;
@@ -24,12 +33,8 @@ class DbProfilerServiceProvider extends ServiceProvider
         });
     }
 
-    private function isEnabled()
+    private function profilingRequested()
     {
-        if ($this->app->environment('production')) {
-            return false;
-        }
-
         return in_array('-vvv', $_SERVER['argv']) || request()->exists('vvv');
     }
 
