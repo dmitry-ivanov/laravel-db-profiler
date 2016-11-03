@@ -26,7 +26,7 @@ class DbProfilerServiceProvider extends ServiceProvider
 
     private function isEnabled()
     {
-        if (!$this->app->isLocal()) {
+        if ($this->app->environment('production')) {
             return false;
         }
 
