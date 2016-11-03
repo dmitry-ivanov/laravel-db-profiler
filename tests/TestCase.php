@@ -42,6 +42,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function loadMigrations()
     {
         $this->loadMigrationsFrom([
+            '--force' => true,
             '--database' => 'testing',
             '--realpath' => __DIR__ . '/fixture/database/migrations',
         ]);
