@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 class DbProfilerServiceProvider extends ServiceProvider
 {
-    private static $counter = 1;
+    private static $counter;
 
     private static function tickCounter()
     {
@@ -20,6 +20,8 @@ class DbProfilerServiceProvider extends ServiceProvider
         if (!$this->isEnabled()) {
             return;
         }
+
+        self::$counter = 1;
 
         DB::listen(function (QueryExecuted $query) {
             $i = self::tickCounter();
