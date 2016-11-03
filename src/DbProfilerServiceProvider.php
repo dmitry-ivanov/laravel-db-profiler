@@ -10,6 +10,11 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter = 1;
 
+    private static function tickCounter()
+    {
+        return self::$counter++;
+    }
+
     public function boot()
     {
         if (!$this->isEnabled()) {
@@ -35,11 +40,6 @@ class DbProfilerServiceProvider extends ServiceProvider
         }
 
         return request()->exists('vvv');
-    }
-
-    private static function tickCounter()
-    {
-        return self::$counter++;
     }
 
     private function getSqlWithAppliedBindings(QueryExecuted $query)
