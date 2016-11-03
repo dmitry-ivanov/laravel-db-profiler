@@ -6,12 +6,14 @@ use Illuminated\Database\DbProfilerServiceProvider;
 class DbProfilerServiceProviderTest extends TestCase
 {
     /** @test */
-    public function it_zzz()
+    public function it_is_disabled_if_environment_is_not_local()
     {
-        $appMock = Mockery::mock(Application::class);
-        $appMock->shouldReceive('isLocal')->once()->withNoArgs()->andReturn(false);
+        $app = Mockery::mock(Application::class);
+        $app->shouldReceive('isLocal')->once()->withNoArgs()->andReturn(false);
 
-        $provider = new DbProfilerServiceProvider($appMock);
+        $provider = new DbProfilerServiceProvider($app);
         $provider->boot();
+
+        $this->assertDatabaseQueriesAreNotListened();
     }
 }

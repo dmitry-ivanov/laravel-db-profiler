@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Events\QueryExecuted;
+
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected function setUp()
@@ -33,5 +35,15 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function seedDatabase()
     {
         factory(Post::class, 10)->create();
+    }
+
+    public function assertDatabaseQueriesAreListened()
+    {
+        $this->assertTrue(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
+    }
+
+    public function assertDatabaseQueriesAreNotListened()
+    {
+        $this->assertFalse(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }
 }
