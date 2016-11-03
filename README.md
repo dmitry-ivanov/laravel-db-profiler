@@ -34,7 +34,6 @@ Provides database queries profiling for Laravel http and console applications.
 
 3. Now you can use database profiler!
 
-
 ## HTTP Profiling
 
 Use `vvv` request parameter for http profiling:
