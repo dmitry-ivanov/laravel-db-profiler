@@ -17,13 +17,13 @@ class HttpProfilingTest extends TestCase
     public function it_is_disabled_if_environment_is_not_local()
     {
         $this->notLocal()->boot();
-        $this->assertDatabaseQueriesAreNotListened();
+        $this->assertDbProfilerIsNotActivated();
     }
 
     /** @test */
     public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_request_param()
     {
         $this->local()->boot();
-        $this->assertDatabaseQueriesAreNotListened();
+        $this->assertDbProfilerIsNotActivated();
     }
 }
