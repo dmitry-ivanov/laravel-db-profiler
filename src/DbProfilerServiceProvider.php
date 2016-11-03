@@ -30,11 +30,7 @@ class DbProfilerServiceProvider extends ServiceProvider
             return false;
         }
 
-        if ($this->app->runningInConsole()) {
-            return in_array('-vvv', $_SERVER['argv']);
-        }
-
-        return request()->exists('vvv');
+        return in_array('-vvv', $_SERVER['argv']) || request()->exists('vvv');
     }
 
     private static function tickCounter()
