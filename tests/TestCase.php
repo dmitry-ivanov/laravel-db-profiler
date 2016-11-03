@@ -76,4 +76,14 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $provider = new DbProfilerServiceProvider($app);
         $provider->boot();
     }
+
+    protected function tearDown()
+    {
+        $dispatcher = DB::getEventDispatcher();
+        if ($dispatcher->hasListeners(QueryExecuted::class)) {
+            $dispatcher->forget(QueryExecuted::class);
+        }
+
+        parent::tearDown();
+    }
 }
