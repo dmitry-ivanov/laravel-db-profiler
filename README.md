@@ -32,7 +32,7 @@ Provides database queries profiling for Laravel http and console applications.
     ],
     ```
 
-3. Now you can use profiler (**only for `local` environment**)!
+3. Now you can use profiler!
 
     Use `vvv` request parameter for http profiling:
     
