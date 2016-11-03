@@ -21,13 +21,13 @@ class DbProfilerServiceProvider extends ServiceProvider
             return;
         }
 
-        $shouldProceed = $this->app->runningUnitTests() ? true : $this->profilingRequested();
+        $shouldProceed = $this->app->runningUnitTests() ? true : $this->isProfilingRequested();
         if (!$shouldProceed) {
             return;
         }
 
         DB::listen(function (QueryExecuted $query) {
-            if (!$this->profilingRequested()) {
+            if (!$this->isProfilingRequested()) {
                 return;
             }
 
@@ -38,7 +38,7 @@ class DbProfilerServiceProvider extends ServiceProvider
         });
     }
 
-    private function profilingRequested()
+    private function isProfilingRequested()
     {
         return in_array('-vvv', $_SERVER['argv']) || request()->exists('vvv');
     }
