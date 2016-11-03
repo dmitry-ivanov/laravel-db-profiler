@@ -10,27 +10,13 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter = 1;
 
-    private static function tickCounter()
-    {
-        return self::$counter++;
-    }
-
     public function boot()
     {
-        if ($this->app->environment('production')) {
-            return;
-        }
-
-        $shouldProceed = $this->app->runningUnitTests() ? true : $this->isProfilingRequested();
-        if (!$shouldProceed) {
+        if (!$this->isEnabled()) {
             return;
         }
 
         DB::listen(function (QueryExecuted $query) {
-            if (!$this->isProfilingRequested()) {
-                return;
-            }
-
             $i = self::tickCounter();
             $sql = $this->getSqlWithAppliedBindings($query);
             $time = $query->time;
@@ -38,9 +24,22 @@ class DbProfilerServiceProvider extends ServiceProvider
         });
     }
 
-    private function isProfilingRequested()
+    private function isEnabled()
     {
-        return in_array('-vvv', $_SERVER['argv']) || request()->exists('vvv');
+        if (!$this->app->isLocal()) {
+            return false;
+        }
+
+        if ($this->app->runningInConsole()) {
+            return in_array('-vvv', $_SERVER['argv']);
+        }
+
+        return request()->exists('vvv');
+    }
+
+    private static function tickCounter()
+    {
+        return self::$counter++;
     }
 
     private function getSqlWithAppliedBindings(QueryExecuted $query)
