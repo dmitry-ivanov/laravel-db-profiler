@@ -57,4 +57,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         $this->assertTrue($this->app->environment($env));
     }
+
+    public function assertEnvironmentNotEquals($env)
+    {
+        $this->assertFalse($this->app->environment($env));
+    }
 }
