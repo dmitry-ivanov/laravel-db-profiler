@@ -33,4 +33,11 @@ class HttpProfilingTest extends TestCase
         $this->local()->withVvv()->boot();
         $this->assertDbProfilerIsActivated();
     }
+
+    /** @test */
+    public function it_dumps_all_database_queries_with_applied_bindings()
+    {
+        $this->local()->withVvv()->boot();
+        $this->assertDatabaseQueriesAreDumped();
+    }
 }

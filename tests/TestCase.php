@@ -51,6 +51,35 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->assertFalse(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }
 
+    public function assertDatabaseQueriesAreDumped()
+    {
+        $queries = [
+            '[1]: select * from "posts"',
+            '[2]: select * from "posts" where "posts"."id" = 1 limit 1',
+            '[3]: select * from "posts" where "posts"."id" = 2 limit 1',
+            '[4]: select * from "posts" where "posts"."id" = 3 limit 1',
+            '[5]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
+        ];
+
+        $mock = Mockery::mock('alias:Symfony\Component\VarDumper\VarDumper');
+        foreach ($queries as $query) {
+            $arg = $this->prepareQueryPattern($query);
+            $mock->shouldReceive('dump')->with($arg)->once();
+        }
+
+        Post::all();
+        Post::find(1);
+        Post::find(2);
+        Post::find(3);
+        Post::where('id', '>', 3)->where('title', 'test')->where('created_at', '>', '2016-11-03 21:00:00')->first();
+    }
+
+    private function prepareQueryPattern($query)
+    {
+        $pattern = preg_quote($query);
+        return "/{$pattern}; (.*? ms)/";
+    }
+
     protected function local()
     {
         $this->env = 'local';
