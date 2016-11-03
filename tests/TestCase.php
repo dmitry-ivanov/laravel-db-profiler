@@ -2,15 +2,11 @@
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
-    protected function getEnvironmentSetUp($app)
-    {
-        $this->setUpDatabase();
-    }
-
     protected function setUp()
     {
         parent::setUp();
 
+        $this->setUpDatabase();
         $this->setUpFactories();
         $this->loadMigrations();
         $this->seedDatabase();
