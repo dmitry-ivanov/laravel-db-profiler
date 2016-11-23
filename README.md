@@ -21,11 +21,13 @@ Provides database queries profiling for Laravel http and console applications.
 ## Usage
 
 1. Install package through `composer`:
+
     ```shell
     composer require illuminated/db-profiler
     ```
 
 2. Add `DbProfilerServiceProvider` into `config/app.php`:
+
     ```php
     'providers' => [
         // ...
