@@ -1,11 +1,12 @@
 preset: laravel
 
 enabled:
-  - ordered_imports
+  - alpha_ordered_imports
 
 disabled:
   - blank_line_before_return
   - concat_without_spaces
+  - length_ordered_imports
   - no_blank_lines_after_phpdoc
   - no_unneeded_control_parentheses
   - not_operator_with_successor_space
