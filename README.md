@@ -35,7 +35,7 @@ Provides database queries profiling for Laravel http and console applications.
     ],
     ```
 
-3. Now you can use database profiler! Enabled only for `local` environment, no need to bother for `production`!
+3. Now you can use database profiler. Enabled only for `local` environment, no need to bother for `production`!
 
 ## HTTP Profiling
 
