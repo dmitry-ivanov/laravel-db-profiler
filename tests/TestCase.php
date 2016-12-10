@@ -41,17 +41,17 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         factory(Post::class, 10)->create();
     }
 
-    public function assertDbProfilerIsActivated()
+    protected function assertDbProfilerIsActivated()
     {
         $this->assertTrue(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }
 
-    public function assertDbProfilerIsNotActivated()
+    protected function assertDbProfilerIsNotActivated()
     {
         $this->assertFalse(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }
 
-    public function assertDatabaseQueriesAreDumped()
+    protected function assertDatabaseQueriesAreDumped()
     {
         $queries = [
             '[1]: select * from "posts"',
