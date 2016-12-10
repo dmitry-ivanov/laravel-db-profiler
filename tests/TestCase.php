@@ -41,6 +41,32 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         factory(Post::class, 10)->create();
     }
 
+    protected function local()
+    {
+        $this->env = 'local';
+        return $this;
+    }
+
+    protected function notLocal()
+    {
+        $this->env = 'production';
+        return $this;
+    }
+
+    abstract protected function runningInConsole();
+
+    abstract protected function withVvv();
+
+    protected function boot()
+    {
+        $app = Mockery::mock(Application::class);
+        $app->shouldReceive('isLocal')->once()->withNoArgs()->andReturn(($this->env == 'local'));
+        $app->shouldReceive('runningInConsole')->zeroOrMoreTimes()->withNoArgs()->andReturn($this->runningInConsole());
+
+        $provider = new DbProfilerServiceProvider($app);
+        $provider->boot();
+    }
+
     protected function assertDbProfilerIsActivated()
     {
         $this->assertTrue(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
@@ -78,32 +104,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         $pattern = preg_quote($query);
         return "/{$pattern}; (.*? ms)/";
-    }
-
-    protected function local()
-    {
-        $this->env = 'local';
-        return $this;
-    }
-
-    protected function notLocal()
-    {
-        $this->env = 'production';
-        return $this;
-    }
-
-    abstract protected function runningInConsole();
-
-    abstract protected function withVvv();
-
-    protected function boot()
-    {
-        $app = Mockery::mock(Application::class);
-        $app->shouldReceive('isLocal')->once()->withNoArgs()->andReturn(($this->env == 'local'));
-        $app->shouldReceive('runningInConsole')->zeroOrMoreTimes()->withNoArgs()->andReturn($this->runningInConsole());
-
-        $provider = new DbProfilerServiceProvider($app);
-        $provider->boot();
     }
 
     protected function tearDown()
