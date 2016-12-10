@@ -72,7 +72,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->assertTrue(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }
 
-    protected function assertDbProfilerIsNotActivated()
+    protected function assertDbProfilerNotActivated()
     {
         $this->assertFalse(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }

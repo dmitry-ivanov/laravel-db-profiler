@@ -17,14 +17,14 @@ class ConsoleProfilingTest extends TestCase
     public function it_is_disabled_if_environment_is_not_local()
     {
         $this->notLocal()->boot();
-        $this->assertDbProfilerIsNotActivated();
+        $this->assertDbProfilerNotActivated();
     }
 
     /** @test */
     public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_option()
     {
         $this->local()->boot();
-        $this->assertDbProfilerIsNotActivated();
+        $this->assertDbProfilerNotActivated();
     }
 
     /** @test */
