@@ -67,7 +67,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $provider->boot();
     }
 
-    protected function assertDbProfilerIsActivated()
+    protected function assertDbProfilerActivated()
     {
         $this->assertTrue(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }

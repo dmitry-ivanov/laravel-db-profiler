@@ -31,7 +31,7 @@ class ConsoleProfilingTest extends TestCase
     public function it_is_enabled_if_environment_is_local_and_there_is_vvv_option()
     {
         $this->local()->withVvv()->boot();
-        $this->assertDbProfilerIsActivated();
+        $this->assertDbProfilerActivated();
     }
 
     /** @test */
