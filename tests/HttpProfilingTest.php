@@ -38,6 +38,6 @@ class HttpProfilingTest extends TestCase
     public function it_dumps_all_database_queries_with_applied_bindings()
     {
         $this->local()->withVvv()->boot();
-        $this->assertDatabaseQueriesAreDumped();
+        $this->assertDbQueriesDumped();
     }
 }

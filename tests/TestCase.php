@@ -77,7 +77,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->assertFalse(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
     }
 
-    protected function assertDatabaseQueriesAreDumped()
+    protected function assertDbQueriesDumped()
     {
         $queries = [
             '[1]: select * from "posts"',
