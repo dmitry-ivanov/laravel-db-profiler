@@ -102,7 +102,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     private function prepareQueryPattern($query)
     {
-        $pattern = preg_quote($query);
+        $pattern = preg_quote($query, '/');
         return "/{$pattern}; (.*? ms)/";
     }
 
