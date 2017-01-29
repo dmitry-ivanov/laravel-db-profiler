@@ -10,6 +10,8 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter;
 
+    public function register() {}
+
     private static function tickCounter()
     {
         return self::$counter++;
@@ -23,10 +25,15 @@ class DbProfilerServiceProvider extends ServiceProvider
 
         self::$counter = 1;
 
-        DB::listen(function (QueryExecuted $query) {
+        DB::listen(function ($sql, $bindings = null, $time = null) {
+            if ($sql instanceof QueryExecuted) {
+                $bindings = $sql->bindings;
+                $time = $sql->time;
+                $sql = $sql->sql;
+            }
+
             $i = self::tickCounter();
-            $sql = $this->getSqlWithAppliedBindings($query);
-            $time = $query->time;
+            $sql = $this->applyBindings($sql, $bindings);
             dump("[$i]: {$sql}; ({$time} ms)");
         });
     }
@@ -44,17 +51,18 @@ class DbProfilerServiceProvider extends ServiceProvider
         return request()->exists('vvv');
     }
 
-    private function getSqlWithAppliedBindings(QueryExecuted $query)
+    private function applyBindings($sql, array $bindings)
     {
-        $sql = $query->sql;
-        $bindings = $this->prepareBindings($query->bindings);
-        return str_replace_array('?', $bindings, $sql);
-    }
+        if (empty($bindings)) {
+            return $sql;
+        }
 
-    private function prepareBindings(array $bindings)
-    {
-        return array_map(function ($item) {
-            return is_numeric($item) ? $item : "'{$item}'";
-        }, $bindings);
+        $placeholder = preg_quote('?', '/');
+        foreach ($bindings as $binding) {
+            $binding = is_numeric($binding) ? $binding : "'{$binding}'";
+            $sql = preg_replace('/' . $placeholder . '/', $binding, $sql, 1);
+        }
+
+        return $sql;
     }
 }
