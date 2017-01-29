@@ -7,15 +7,31 @@ use Illuminated\Database\DbProfilerServiceProvider;
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     private $env;
+    private $eventName;
 
-    protected function setUp()
+    public function setUp()
     {
         parent::setUp();
 
+        $this->setUpEventName();
         $this->setUpDatabase();
         $this->setUpFactories();
         $this->loadMigrations();
         $this->seedDatabase();
+    }
+
+    protected function getPackageProviders($app)
+    {
+        if (class_exists(Orchestra\Database\ConsoleServiceProvider::class)) {
+            return [Orchestra\Database\ConsoleServiceProvider::class];
+        }
+
+        return [];
+    }
+
+    private function setUpEventName()
+    {
+        $this->eventName = class_exists(QueryExecuted::class) ? QueryExecuted::class : 'illuminate.query';
     }
 
     private function setUpDatabase()
@@ -69,12 +85,12 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function assertDbProfilerActivated()
     {
-        $this->assertTrue(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
+        $this->assertTrue(DB::getEventDispatcher()->hasListeners($this->eventName));
     }
 
     protected function assertDbProfilerNotActivated()
     {
-        $this->assertFalse(DB::getEventDispatcher()->hasListeners(QueryExecuted::class));
+        $this->assertFalse(DB::getEventDispatcher()->hasListeners($this->eventName));
     }
 
     protected function assertDbQueriesDumped()
@@ -106,11 +122,11 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         return "/{$pattern}; (.*? ms)/";
     }
 
-    protected function tearDown()
+    public function tearDown()
     {
         $dispatcher = DB::getEventDispatcher();
-        if ($dispatcher->hasListeners(QueryExecuted::class)) {
-            $dispatcher->forget(QueryExecuted::class);
+        if ($dispatcher->hasListeners($this->eventName)) {
+            $dispatcher->forget($this->eventName);
         }
 
         parent::tearDown();
