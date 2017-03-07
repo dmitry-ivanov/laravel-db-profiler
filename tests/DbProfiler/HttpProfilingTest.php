@@ -1,5 +1,7 @@
 <?php
 
+namespace Illuminated\Database\DbProfiler\Tests;
+
 class HttpProfilingTest extends TestCase
 {
     protected function runningInConsole()

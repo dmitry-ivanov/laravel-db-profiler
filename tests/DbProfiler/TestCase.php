@@ -1,8 +1,14 @@
 <?php
 
+namespace Illuminated\Database\DbProfiler\Tests;
+
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminated\Database\DbProfilerServiceProvider;
+use Mockery;
+use Orchestra\Database\ConsoleServiceProvider;
+use Post;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -22,8 +28,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function getPackageProviders($app)
     {
-        if (class_exists(Orchestra\Database\ConsoleServiceProvider::class)) {
-            return [Orchestra\Database\ConsoleServiceProvider::class];
+        if (class_exists(ConsoleServiceProvider::class)) {
+            return [ConsoleServiceProvider::class];
         }
 
         return [];
