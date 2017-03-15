@@ -6,12 +6,14 @@ use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
 use Illuminated\Database\DbProfilerServiceProvider;
+use Illuminated\Testing\TestingTools;
 use Mockery;
-use Orchestra\Database\ConsoleServiceProvider;
 use Post;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
+    use TestingTools;
+
     private $env;
     private $eventName;
 
@@ -22,17 +24,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->setUpEventName();
         $this->setUpDatabase();
         $this->setUpFactories();
-        $this->loadMigrations();
         $this->seedDatabase();
-    }
-
-    protected function getPackageProviders($app)
-    {
-        if (class_exists(ConsoleServiceProvider::class)) {
-            return [ConsoleServiceProvider::class];
-        }
-
-        return [];
     }
 
     private function setUpEventName()
@@ -43,19 +35,19 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function setUpDatabase()
     {
         config(['database.default' => 'testing']);
+
+        DB::statement('PRAGMA foreign_keys = ON');
+
+        $this->artisan('migrate', [
+            '--database' => 'testing',
+            '--path' => relative_path(__DIR__, base_path()) . '/fixture/database/migrations/',
+        ]);
+        $this->seeArtisanOutput(__DIR__ . '/migrate.output.txt');
     }
 
     private function setUpFactories()
     {
         $this->withFactories(__DIR__ . '/fixture/database/factories');
-    }
-
-    private function loadMigrations()
-    {
-        $this->loadMigrationsFrom([
-            '--database' => 'testing',
-            '--realpath' => __DIR__ . '/fixture/database/migrations',
-        ]);
     }
 
     private function seedDatabase()
