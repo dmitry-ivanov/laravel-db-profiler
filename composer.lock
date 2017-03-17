@@ -1711,16 +1711,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "1.0.22",
+            "version": "1.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "965b1e70f8d519a22c051b82dfda7cc87d9207b6"
+                "reference": "a098612d1a9572fc0865d611d1d9dd378f9d6abc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/965b1e70f8d519a22c051b82dfda7cc87d9207b6",
-                "reference": "965b1e70f8d519a22c051b82dfda7cc87d9207b6",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/a098612d1a9572fc0865d611d1d9dd378f9d6abc",
+                "reference": "a098612d1a9572fc0865d611d1d9dd378f9d6abc",
                 "shasum": ""
             },
             "require": {
@@ -1734,7 +1734,7 @@
                 "symfony/var-dumper": "^2.7|^3.0"
             },
             "require-dev": {
-                "illuminated/testing-tools": "^0.5",
+                "illuminated/testing-tools": "^0.6",
                 "mockery/mockery": "^0.9",
                 "phpunit/phpunit": "^5.0"
             },
@@ -1763,7 +1763,7 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2017-03-15T11:14:22+00:00"
+            "time": "2017-03-17T12:36:39+00:00"
         },
         {
             "name": "illuminated/testing-tools",

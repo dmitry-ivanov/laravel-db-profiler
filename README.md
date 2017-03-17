@@ -1,4 +1,4 @@
-# Laravel database profiler
+# Laravel Database Profiler
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b/big.png)](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b)
 
