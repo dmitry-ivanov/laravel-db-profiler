@@ -43,7 +43,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '--database' => 'testing',
             '--path' => relative_path(__DIR__, base_path()) . '/fixture/database/migrations/',
         ]);
-        $this->seeArtisanOutput(__DIR__ . '/migrate.output.txt');
+        $this->seeInArtisanOutput('Migrated');
     }
 
     private function setUpFactories()
