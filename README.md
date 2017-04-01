@@ -41,7 +41,7 @@ Provides database queries profiling for Laravel http and console applications.
 
 Use `vvv` request parameter for http profiling:
 
-![Http example](doc/img/example-http.png)
+![Http example](doc/img/example-http.gif)
 
 ## Console Profiling
 
