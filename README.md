@@ -13,6 +13,8 @@
 
 Provides database queries profiling for Laravel http and console applications.
 
+Enabled only for `local` environment, you don't need to bother about `production`.
+
 ## Requirements
 
 - `PHP >=5.5.9`
@@ -34,8 +36,6 @@ Provides database queries profiling for Laravel http and console applications.
         Illuminated\Database\DbProfilerServiceProvider::class,
     ],
     ```
-
-    Enabled only for `local` environment, you don't need to bother about `production`.
 
 ## HTTP Profiling
 
