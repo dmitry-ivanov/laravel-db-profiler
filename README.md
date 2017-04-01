@@ -47,4 +47,4 @@ Use `vvv` request parameter for http profiling:
 
 Use `-vvv` option for console profiling:
 
-![Console example](doc/img/example-console.png)
+![Console example](doc/img/example-console.gif)
