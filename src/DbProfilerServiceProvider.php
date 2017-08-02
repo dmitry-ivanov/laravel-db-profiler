@@ -10,9 +10,9 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter;
 
-    /* @laravel-versions */
     public function register()
     {
+        $this->mergeConfig();
     }
 
     private static function tickCounter()
@@ -68,5 +68,15 @@ class DbProfilerServiceProvider extends ServiceProvider
         }
 
         return $sql;
+    }
+
+    private function mergeConfig()
+    {
+        $this->mergeConfigFrom($this->getConfigPath(), 'db-profiler');
+    }
+
+    private function getConfigPath()
+    {
+        return __DIR__ . '/../config/db-profiler.php';
     }
 }
