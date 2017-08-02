@@ -44,7 +44,7 @@ class DbProfilerServiceProvider extends ServiceProvider
 
     private function isEnabled()
     {
-        if (!$this->app->isLocal()) {
+        if (!config('db-profiler.force') && !$this->app->isLocal()) {
             return false;
         }
 
