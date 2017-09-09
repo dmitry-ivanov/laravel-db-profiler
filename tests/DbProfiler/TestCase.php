@@ -2,7 +2,6 @@
 
 namespace Illuminated\Database\DbProfiler\Tests;
 
-use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
 use Illuminated\Database\DbProfilerServiceProvider;
@@ -29,8 +28,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     private function setUpEventName()
     {
-        /* @laravel-versions */
-        $this->eventName = class_exists(QueryExecuted::class) ? QueryExecuted::class : 'illuminate.query';
+        $this->eventName = 'illuminate.query';
     }
 
     private function setUpDatabase()

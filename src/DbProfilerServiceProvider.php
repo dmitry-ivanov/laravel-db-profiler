@@ -2,7 +2,6 @@
 
 namespace Illuminated\Database;
 
-use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
@@ -10,7 +9,6 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter;
 
-    /* @laravel-versions */
     public function register()
     {
     }
@@ -29,13 +27,6 @@ class DbProfilerServiceProvider extends ServiceProvider
         self::$counter = 1;
 
         DB::listen(function ($sql, $bindings = null, $time = null) {
-            /* @laravel-versions */
-            if ($sql instanceof QueryExecuted) {
-                $bindings = $sql->bindings;
-                $time = $sql->time;
-                $sql = $sql->sql;
-            }
-
             $i = self::tickCounter();
             $sql = $this->applyBindings($sql, $bindings);
             dump("[$i]: {$sql}; ({$time} ms)");
