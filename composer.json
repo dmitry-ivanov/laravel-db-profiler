@@ -31,5 +31,12 @@
             "tests/DbProfiler/TestCase.php",
             "tests/DbProfiler/fixture/app"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Illuminated\\Database\\DbProfilerServiceProvider"
+            ]
+        }
     }
 }

@@ -23,14 +23,7 @@ Enabled only for `local` environment, you don't need to bother about `production
     composer require illuminated/db-profiler
     ```
 
-2. Add `DbProfilerServiceProvider` into `config/app.php`:
-
-    ```php
-    'providers' => [
-        // ...
-        Illuminated\Database\DbProfilerServiceProvider::class,
-    ],
-    ```
+2. That's it! Use `vvv` request parameter or `-vvv` cli option to enable profiling.
 
 ## HTTP Profiling
 
