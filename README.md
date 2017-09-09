@@ -2,9 +2,9 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b/big.png)](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b)
 
-[![StyleCI](https://styleci.io/repos/68023936/shield?branch=5.3&style=flat)](https://styleci.io/repos/68023936)
-[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler.svg?branch=5.3)](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-db-profiler/badge.svg?branch=5.3)](https://coveralls.io/github/dmitry-ivanov/laravel-db-profiler?branch=5.3)
+[![StyleCI](https://styleci.io/repos/68023936/shield?branch=5.4&style=flat)](https://styleci.io/repos/68023936)
+[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler.svg?branch=5.4)](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler)
+[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-db-profiler/badge.svg?branch=5.4)](https://coveralls.io/github/dmitry-ivanov/laravel-db-profiler?branch=5.4)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/db-profiler/v/stable)](https://packagist.org/packages/illuminated/db-profiler)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/db-profiler/v/unstable)](https://packagist.org/packages/illuminated/db-profiler)
@@ -20,7 +20,7 @@ Enabled only for `local` environment, you don't need to bother about `production
 1. Install package through `composer`:
 
     ```shell
-    composer require "illuminated/db-profiler:5.3.*"
+    composer require "illuminated/db-profiler:5.4.*"
     ```
 
 2. Add `DbProfilerServiceProvider` into `config/app.php`:
