@@ -10,16 +10,16 @@
         }
     ],
     "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "5.2.*",
-        "illuminate/database": "5.2.*"
+        "php": ">=5.6.4",
+        "illuminate/support": "5.3.*",
+        "illuminate/database": "5.3.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.0",
+        "phpunit/phpunit": "^5.4",
         "mockery/mockery": "^0.9",
-        "orchestra/testbench": "3.2.*",
-        "illuminated/testing-tools": "5.2.*",
-        "illuminated/helper-functions": "5.2.*"
+        "orchestra/testbench": "3.3.*",
+        "illuminated/testing-tools": "5.3.*",
+        "illuminated/helper-functions": "5.3.*"
     },
     "autoload": {
         "psr-4": {
