@@ -2,9 +2,9 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b/big.png)](https://insight.sensiolabs.com/projects/8ec1928c-0727-427c-96e9-2a963eb6546b)
 
-[![StyleCI](https://styleci.io/repos/68023936/shield?branch=master&style=flat)](https://styleci.io/repos/68023936)
-[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler.svg?branch=master)](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-db-profiler/badge.svg?branch=master)](https://coveralls.io/github/dmitry-ivanov/laravel-db-profiler?branch=master)
+[![StyleCI](https://styleci.io/repos/68023936/shield?branch=5.5&style=flat)](https://styleci.io/repos/68023936)
+[![Build Status](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler.svg?branch=5.5)](https://travis-ci.org/dmitry-ivanov/laravel-db-profiler)
+[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-db-profiler/badge.svg?branch=5.5)](https://coveralls.io/github/dmitry-ivanov/laravel-db-profiler?branch=5.5)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/db-profiler/v/stable)](https://packagist.org/packages/illuminated/db-profiler)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/db-profiler/v/unstable)](https://packagist.org/packages/illuminated/db-profiler)
