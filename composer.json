@@ -11,15 +11,15 @@
     ],
     "require": {
         "php": ">=5.6.4",
-        "illuminate/support": "5.3.*",
-        "illuminate/database": "5.3.*"
+        "illuminate/support": "5.4.*",
+        "illuminate/database": "5.4.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.4",
+        "phpunit/phpunit": "^5.7",
         "mockery/mockery": "^0.9",
-        "orchestra/testbench": "3.3.*",
-        "illuminated/testing-tools": "5.3.*",
-        "illuminated/helper-functions": "5.3.*"
+        "orchestra/testbench": "3.4.*",
+        "illuminated/testing-tools": "5.4.*",
+        "illuminated/helper-functions": "5.4.*"
     },
     "autoload": {
         "psr-4": {
