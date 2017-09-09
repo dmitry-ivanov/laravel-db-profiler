@@ -29,8 +29,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     private function setUpEventName()
     {
-        /* @laravel-versions */
-        $this->eventName = class_exists(QueryExecuted::class) ? QueryExecuted::class : 'illuminate.query';
+        $this->eventName = QueryExecuted::class;
     }
 
     private function setUpDatabase()

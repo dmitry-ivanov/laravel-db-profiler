@@ -28,17 +28,10 @@ class DbProfilerServiceProvider extends ServiceProvider
 
         self::$counter = 1;
 
-        DB::listen(function ($sql, $bindings = null, $time = null) {
-            /* @laravel-versions */
-            if ($sql instanceof QueryExecuted) {
-                $bindings = $sql->bindings;
-                $time = $sql->time;
-                $sql = $sql->sql;
-            }
-
+        DB::listen(function (QueryExecuted $query) {
             $i = self::tickCounter();
-            $sql = $this->applyBindings($sql, $bindings);
-            dump("[$i]: {$sql}; ({$time} ms)");
+            $sql = $this->applyBindings($query->sql, $query->bindings);
+            dump("[$i]: {$sql}; ({$query->time} ms)");
         });
     }
 
