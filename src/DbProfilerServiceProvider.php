@@ -10,7 +10,6 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter;
 
-    /* @laravel-versions */
     public function register()
     {
     }
