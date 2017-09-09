@@ -10,10 +10,6 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     private static $counter;
 
-    public function register()
-    {
-    }
-
     private static function tickCounter()
     {
         return self::$counter++;
