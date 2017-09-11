@@ -15,6 +15,8 @@ Provides database queries profiling for Laravel http and console applications.
 
 Enabled only for `local` environment, you don't need to bother about `production`.
 
+> If you wish to enable profiling on other environments, use `db-profiler.force` config variable.
+
 ## Usage
 
 1. Install package through `composer`:
