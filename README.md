@@ -13,8 +13,6 @@
 
 Provides database queries profiling for Laravel http and console applications.
 
-Enabled only for `local` environment, you don't need to bother about `production`.
-
 | Laravel | Database Profiler                                                      |
 | ------- | :--------------------------------------------------------------------: |
 | 5.1.*   | [5.1.*](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/5.1) |
@@ -22,6 +20,8 @@ Enabled only for `local` environment, you don't need to bother about `production
 | 5.3.*   | [5.3.*](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/5.3) |
 | 5.4.*   | [5.4.*](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/5.4) |
 | 5.5.*   | [5.5.*](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/5.5) |
+
+Enabled only for `local` environment, you don't need to bother about `production`.
 
 ## Usage
 
