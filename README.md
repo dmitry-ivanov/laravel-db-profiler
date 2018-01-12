@@ -30,7 +30,7 @@ Enabled only for `local` environment, you don't need to bother about `production
 1. Install package through `composer`:
 
     ```shell
-    composer require illuminated/db-profiler
+    composer require "illuminated/db-profiler:5.5.*"
     ```
 
 2. That's it! Use `vvv` request parameter or `-vvv` cli option to enable profiling.
