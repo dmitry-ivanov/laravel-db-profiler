@@ -7,10 +7,10 @@ php:
 
 install:
   - composer update
-  - composer require satooshi/php-coveralls --dev
+  - composer require php-coveralls/php-coveralls --dev
 
 script:
   - vendor/bin/phpunit --coverage-clover ./tests/logs/clover.xml
 
 after_script:
-  - php vendor/bin/coveralls -v
+  - php vendor/bin/php-coveralls -v
