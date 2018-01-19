@@ -602,16 +602,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.7.1",
+            "version": "3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "45cffe822057a09e05f7bd09ec5fb88eeecd2334"
+                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/45cffe822057a09e05f7bd09ec5fb88eeecd2334",
-                "reference": "45cffe822057a09e05f7bd09ec5fb88eeecd2334",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/bba83ad77bb9deb6d3c352a7361b818e415b221d",
+                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d",
                 "shasum": ""
             },
             "require": {
@@ -623,7 +623,7 @@
             },
             "require-dev": {
                 "apigen/apigen": "^4.1",
-                "codeception/aspect-mock": "^1.0 | ^2.0",
+                "codeception/aspect-mock": "^1.0 | ~2.0.0",
                 "doctrine/annotations": "~1.2.0",
                 "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
@@ -631,7 +631,7 @@
                 "mockery/mockery": "^0.9.4",
                 "moontoast/math": "^1.1",
                 "php-mock/php-mock-phpunit": "^0.3|^1.1",
-                "phpunit/phpunit": "^4.7|>=5.0 <5.4",
+                "phpunit/phpunit": "^4.7|^5.0",
                 "satooshi/php-coveralls": "^0.6.1",
                 "squizlabs/php_codesniffer": "^2.3"
             },
@@ -680,7 +680,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-09-22T20:46:04+00:00"
+            "time": "2018-01-13T22:22:03+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1800,16 +1800,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.4.3",
+            "version": "5.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "d12ff58430d57ba950c80c48bfd35e7042893659"
+                "reference": "75b4cd0354c96f26449ffc6b2e27d33d9c0d266e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/d12ff58430d57ba950c80c48bfd35e7042893659",
-                "reference": "d12ff58430d57ba950c80c48bfd35e7042893659",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/75b4cd0354c96f26449ffc6b2e27d33d9c0d266e",
+                "reference": "75b4cd0354c96f26449ffc6b2e27d33d9c0d266e",
                 "shasum": ""
             },
             "require": {
@@ -1853,20 +1853,20 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2018-01-12T11:19:03+00:00"
+            "time": "2018-01-19T10:06:49+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.4.1",
+            "version": "5.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "9b0684e6d341a4c856325d2abf2fc0b87aeb3fb8"
+                "reference": "66126b69647f1ed85fe35a8596e0104e2a0d9089"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/9b0684e6d341a4c856325d2abf2fc0b87aeb3fb8",
-                "reference": "9b0684e6d341a4c856325d2abf2fc0b87aeb3fb8",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/66126b69647f1ed85fe35a8596e0104e2a0d9089",
+                "reference": "66126b69647f1ed85fe35a8596e0104e2a0d9089",
                 "shasum": ""
             },
             "require": {
@@ -1903,7 +1903,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2018-01-12T12:57:01+00:00"
+            "time": "2018-01-19T10:58:24+00:00"
         },
         {
             "name": "mockery/mockery",
