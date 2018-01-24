@@ -10,6 +10,8 @@ use Illuminated\Testing\TestingTools;
 use Mockery;
 use Post;
 
+Mockery::globalHelpers();
+
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     use TestingTools;
@@ -73,9 +75,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function boot()
     {
-        $app = Mockery::mock(Application::class);
-        $app->shouldReceive('isLocal')->once()->withNoArgs()->andReturn(($this->env == 'local'));
-        $app->shouldReceive('runningInConsole')->zeroOrMoreTimes()->withNoArgs()->andReturn($this->runningInConsole());
+        $app = mock(Application::class);
+        $app->expects()->isLocal()->andReturn($this->env == 'local');
+        $app->allows()->runningInConsole()->andReturn($this->runningInConsole());
 
         $provider = new DbProfilerServiceProvider($app);
         $provider->boot();
@@ -101,10 +103,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[5]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
         ];
 
-        $mock = Mockery::mock('alias:Symfony\Component\VarDumper\VarDumper');
+        $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
         foreach ($queries as $query) {
             $arg = $this->prepareQueryPattern($query);
-            $mock->shouldReceive('dump')->with(Mockery::pattern($arg))->once();
+            $mock->expects()->dump(Mockery::pattern($arg));
         }
 
         Post::all();
