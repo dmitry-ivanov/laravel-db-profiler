@@ -104,7 +104,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $mock = Mockery::mock('alias:Symfony\Component\VarDumper\VarDumper');
         foreach ($queries as $query) {
             $arg = $this->prepareQueryPattern($query);
-            $mock->shouldReceive('dump')->with($arg)->once();
+            $mock->shouldReceive('dump')->with(Mockery::pattern($arg))->once();
         }
 
         Post::all();
