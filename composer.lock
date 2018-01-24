@@ -815,16 +815,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.7.2",
+            "version": "3.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d"
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/bba83ad77bb9deb6d3c352a7361b818e415b221d",
-                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
                 "shasum": ""
             },
             "require": {
@@ -835,17 +835,15 @@
                 "rhumsaa/uuid": "self.version"
             },
             "require-dev": {
-                "apigen/apigen": "^4.1",
                 "codeception/aspect-mock": "^1.0 | ~2.0.0",
                 "doctrine/annotations": "~1.2.0",
                 "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
-                "mockery/mockery": "^0.9.4",
+                "mockery/mockery": "^0.9.9",
                 "moontoast/math": "^1.1",
                 "php-mock/php-mock-phpunit": "^0.3|^1.1",
                 "phpunit/phpunit": "^4.7|^5.0",
-                "satooshi/php-coveralls": "^0.6.1",
                 "squizlabs/php_codesniffer": "^2.3"
             },
             "suggest": {
@@ -893,7 +891,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-01-13T22:22:03+00:00"
+            "time": "2018-01-20T00:28:24+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2014,16 +2012,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.5.3",
+            "version": "5.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "137db81628f213fcaa8e6bdb06882e0c8c05efdd"
+                "reference": "bbf5a5a6fdc8999685402b1f847665a98fce70ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/137db81628f213fcaa8e6bdb06882e0c8c05efdd",
-                "reference": "137db81628f213fcaa8e6bdb06882e0c8c05efdd",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/bbf5a5a6fdc8999685402b1f847665a98fce70ac",
+                "reference": "bbf5a5a6fdc8999685402b1f847665a98fce70ac",
                 "shasum": ""
             },
             "require": {
@@ -2038,7 +2036,7 @@
             },
             "require-dev": {
                 "illuminated/testing-tools": "5.5.*",
-                "mockery/mockery": "^0.9",
+                "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.0"
             },
             "type": "library",
@@ -2066,26 +2064,26 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2018-01-19T09:44:24+00:00"
+            "time": "2018-01-24T12:18:17+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.5.4",
+            "version": "5.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "1276d0c03dde68945c50b64588e43c0e8e474d0d"
+                "reference": "1045ef4588dd7dfb3a341533191d3f2305c6b2a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/1276d0c03dde68945c50b64588e43c0e8e474d0d",
-                "reference": "1276d0c03dde68945c50b64588e43c0e8e474d0d",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/1045ef4588dd7dfb3a341533191d3f2305c6b2a6",
+                "reference": "1045ef4588dd7dfb3a341533191d3f2305c6b2a6",
                 "shasum": ""
             },
             "require": {
                 "illuminate/database": "5.5.*",
                 "illuminate/support": "5.5.*",
-                "mockery/mockery": "^0.9",
+                "mockery/mockery": "^0.9|^1.0",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -2116,7 +2114,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2018-01-19T11:00:21+00:00"
+            "time": "2018-01-24T10:37:59+00:00"
         },
         {
             "name": "mockery/mockery",
