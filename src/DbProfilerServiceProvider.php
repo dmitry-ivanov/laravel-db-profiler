@@ -50,8 +50,14 @@ class DbProfilerServiceProvider extends ServiceProvider
         }
 
         foreach ($bindings as $binding) {
-            if (gettype($binding) == 'string') {
-                $binding = "'{$binding}'";
+            switch (gettype($binding)) {
+                case 'boolean':
+                    $binding = (int) $binding;
+                    break;
+
+                case 'string':
+                    $binding = "'{$binding}'";
+                    break;
             }
 
             $sql = preg_replace('/\?/', $binding, $sql, 1);

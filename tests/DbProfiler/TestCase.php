@@ -92,7 +92,11 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[6]: select * from "posts" where "is_enabled" = 1',
             '[7]: select * from "posts" where "is_enabled" = 1',
             '[8]: select * from "posts" where "is_enabled" = \'1\'',
-            '[9]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
+            '[9]: select * from "posts" where "id" in (1, \'2\', 3)',
+            '[10]: select * from "posts" where "title" in (\'foo\', \'bar\', \'baz\')',
+            '[11]: select * from "posts" where "price" in (1.23, \'2.34\', 3.45)',
+            '[12]: select * from "posts" where "is_enabled" in (1, 0, 1, 0, \'1\', \'0\')',
+            '[13]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
         ];
 
         $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
@@ -109,6 +113,10 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         Post::where('is_enabled', true)->get();
         Post::where('is_enabled', 1)->get();
         Post::where('is_enabled', '1')->get();
+        Post::whereIn('id', [1, '2', 3])->get();
+        Post::whereIn('title', ['foo', 'bar', 'baz'])->get();
+        Post::whereIn('price', [1.23, '2.34', 3.45])->get();
+        Post::whereIn('is_enabled', [true, false, 1, 0, '1', '0'])->get();
         Post::where('id', '>', 3)->where('title', 'test')->where('created_at', '>', '2016-11-03 21:00:00')->first();
     }
 
