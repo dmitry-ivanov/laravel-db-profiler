@@ -25,8 +25,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->setUpEventName();
         $this->setUpDatabase();
-        $this->setUpFactories();
-        $this->seedDatabase();
     }
 
     private function setUpEventName()
@@ -45,16 +43,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '--path' => relative_path(__DIR__, base_path()) . '/fixture/database/migrations/',
         ]);
         $this->seeInArtisanOutput('Migrated');
-    }
-
-    private function setUpFactories()
-    {
-        $this->withFactories(__DIR__ . '/fixture/database/factories');
-    }
-
-    private function seedDatabase()
-    {
-        factory(Post::class, 10)->create();
     }
 
     protected function local()
