@@ -25,8 +25,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         $this->setUpEventName();
         $this->setUpDatabase();
-        $this->setUpFactories();
-        $this->seedDatabase();
     }
 
     private function setUpEventName()
@@ -45,16 +43,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '--path' => relative_path(__DIR__, base_path()) . '/fixture/database/migrations/',
         ]);
         $this->seeInArtisanOutput('Migrated');
-    }
-
-    private function setUpFactories()
-    {
-        $this->withFactories(__DIR__ . '/fixture/database/factories');
-    }
-
-    private function seedDatabase()
-    {
-        factory(Post::class, 10)->create();
     }
 
     protected function local()
@@ -98,9 +86,21 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $queries = [
             '[1]: select * from "posts"',
             '[2]: select * from "posts" where "posts"."id" = 1 limit 1',
-            '[3]: select * from "posts" where "posts"."id" = 2 limit 1',
-            '[4]: select * from "posts" where "posts"."id" = 3 limit 1',
-            '[5]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
+            '[3]: select * from "posts" where "posts"."id" = \'2\' limit 1',
+            '[4]: select * from "posts" where "title" = \'foo bar baz\'',
+            '[5]: select * from "posts" where "price" > 123.45',
+            '[6]: select * from "posts" where "price" < \'543.21\'',
+            '[7]: select * from "posts" where "is_enabled" = 1',
+            '[8]: select * from "posts" where "is_enabled" = 0',
+            '[9]: select * from "posts" where "is_enabled" = 1',
+            '[10]: select * from "posts" where "is_enabled" = \'1\'',
+            '[11]: select * from "posts" where "id" in (1, \'2\', 3)',
+            '[12]: select * from "posts" where "title" in (\'foo\', \'bar\', \'baz\')',
+            '[13]: select * from "posts" where "price" in (1.23, \'2.34\', 3.45)',
+            '[14]: select * from "posts" where "is_enabled" in (1, 0, 1, 0, \'1\', \'0\')',
+            '[15]: select * from "posts" where "id" > 3 and "title" = \'foo bar baz\' and "price" > 123.45 and "is_enabled" = 1 and "created_at" > \'2016-11-03 21:00:00\' limit 1',
+            '[16]: select * from "posts" where "title" is null',
+            '[17]: select * from "posts" where "title" is null and "price" > 123.45',
         ];
 
         $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
@@ -111,9 +111,26 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
         Post::all();
         Post::find(1);
-        Post::find(2);
-        Post::find(3);
-        Post::where('id', '>', 3)->where('title', 'test')->where('created_at', '>', '2016-11-03 21:00:00')->first();
+        Post::find('2');
+        Post::where('title', 'foo bar baz')->get();
+        Post::where('price', '>', 123.45)->get();
+        Post::where('price', '<', '543.21')->get();
+        Post::where('is_enabled', true)->get();
+        Post::where('is_enabled', false)->get();
+        Post::where('is_enabled', 1)->get();
+        Post::where('is_enabled', '1')->get();
+        Post::whereIn('id', [1, '2', 3])->get();
+        Post::whereIn('title', ['foo', 'bar', 'baz'])->get();
+        Post::whereIn('price', [1.23, '2.34', 3.45])->get();
+        Post::whereIn('is_enabled', [true, false, 1, 0, '1', '0'])->get();
+        Post::where('id', '>', 3)
+            ->where('title', 'foo bar baz')
+            ->where('price', '>', 123.45)
+            ->where('is_enabled', true)
+            ->where('created_at', '>', '2016-11-03 21:00:00')
+            ->first();
+        Post::where('title', null)->get();
+        Post::where('title', null)->where('price', '>', 123.45)->get();
     }
 
     private function prepareQueryPattern($query)

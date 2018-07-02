@@ -49,10 +49,18 @@ class DbProfilerServiceProvider extends ServiceProvider
             return $sql;
         }
 
-        $placeholder = preg_quote('?', '/');
         foreach ($bindings as $binding) {
-            $binding = is_numeric($binding) ? $binding : "'{$binding}'";
-            $sql = preg_replace('/' . $placeholder . '/', $binding, $sql, 1);
+            switch (gettype($binding)) {
+                case 'boolean':
+                    $binding = (int) $binding;
+                    break;
+
+                case 'string':
+                    $binding = "'{$binding}'";
+                    break;
+            }
+
+            $sql = preg_replace('/\?/', $binding, $sql, 1);
         }
 
         return $sql;
