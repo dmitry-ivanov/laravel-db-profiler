@@ -87,16 +87,17 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[1]: select * from "posts"',
             '[2]: select * from "posts" where "posts"."id" = 1 limit 1',
             '[3]: select * from "posts" where "posts"."id" = \'2\' limit 1',
-            '[4]: select * from "posts" where "price" > 123.45',
-            '[5]: select * from "posts" where "price" < \'543.21\'',
-            '[6]: select * from "posts" where "is_enabled" = 1',
+            '[4]: select * from "posts" where "title" = \'foo bar baz\'',
+            '[5]: select * from "posts" where "price" > 123.45',
+            '[6]: select * from "posts" where "price" < \'543.21\'',
             '[7]: select * from "posts" where "is_enabled" = 1',
-            '[8]: select * from "posts" where "is_enabled" = \'1\'',
-            '[9]: select * from "posts" where "id" in (1, \'2\', 3)',
-            '[10]: select * from "posts" where "title" in (\'foo\', \'bar\', \'baz\')',
-            '[11]: select * from "posts" where "price" in (1.23, \'2.34\', 3.45)',
-            '[12]: select * from "posts" where "is_enabled" in (1, 0, 1, 0, \'1\', \'0\')',
-            '[13]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
+            '[8]: select * from "posts" where "is_enabled" = 1',
+            '[9]: select * from "posts" where "is_enabled" = \'1\'',
+            '[10]: select * from "posts" where "id" in (1, \'2\', 3)',
+            '[11]: select * from "posts" where "title" in (\'foo\', \'bar\', \'baz\')',
+            '[12]: select * from "posts" where "price" in (1.23, \'2.34\', 3.45)',
+            '[13]: select * from "posts" where "is_enabled" in (1, 0, 1, 0, \'1\', \'0\')',
+            '[14]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
         ];
 
         $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
@@ -108,6 +109,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         Post::all();
         Post::find(1);
         Post::find('2');
+        Post::where('title', 'foo bar baz')->get();
         Post::where('price', '>', 123.45)->get();
         Post::where('price', '<', '543.21')->get();
         Post::where('is_enabled', true)->get();
