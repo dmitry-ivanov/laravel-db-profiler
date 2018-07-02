@@ -11,6 +11,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->boolean('is_enabled');
             $table->timestamps();
         });
     }
