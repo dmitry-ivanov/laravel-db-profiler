@@ -51,7 +51,7 @@ class DbProfilerServiceProvider extends ServiceProvider
 
         $placeholder = preg_quote('?', '/');
         foreach ($bindings as $binding) {
-            $binding = is_numeric($binding) ? $binding : "'{$binding}'";
+            $binding = gettype($binding) !== 'string' ? $binding : "'{$binding}'";
             $sql = preg_replace('/' . $placeholder . '/', $binding, $sql, 1);
         }
 
