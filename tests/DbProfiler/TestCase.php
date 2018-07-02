@@ -99,6 +99,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[13]: select * from "posts" where "price" in (1.23, \'2.34\', 3.45)',
             '[14]: select * from "posts" where "is_enabled" in (1, 0, 1, 0, \'1\', \'0\')',
             '[15]: select * from "posts" where "id" > 3 and "title" = \'foo bar baz\' and "price" > 123.45 and "is_enabled" = 1 and "created_at" > \'2016-11-03 21:00:00\' limit 1',
+            '[16]: select * from "posts" where "title" is null',
+            '[17]: select * from "posts" where "title" is null and "price" > 123.45',
         ];
 
         $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
@@ -127,6 +129,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             ->where('is_enabled', true)
             ->where('created_at', '>', '2016-11-03 21:00:00')
             ->first();
+        Post::where('title', null)->get();
+        Post::where('title', null)->where('price', '>', 123.45)->get();
     }
 
     private function prepareQueryPattern($query)
