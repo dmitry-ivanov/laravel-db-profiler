@@ -87,10 +87,12 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[1]: select * from "posts"',
             '[2]: select * from "posts" where "posts"."id" = 1 limit 1',
             '[3]: select * from "posts" where "posts"."id" = \'2\' limit 1',
-            '[4]: select * from "posts" where "is_enabled" = 1',
-            '[5]: select * from "posts" where "is_enabled" = 1',
-            '[6]: select * from "posts" where "is_enabled" = \'1\'',
-            '[7]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
+            '[4]: select * from "posts" where "price" > 123.45',
+            '[5]: select * from "posts" where "price" < \'543.21\'',
+            '[6]: select * from "posts" where "is_enabled" = 1',
+            '[7]: select * from "posts" where "is_enabled" = 1',
+            '[8]: select * from "posts" where "is_enabled" = \'1\'',
+            '[9]: select * from "posts" where "id" > 3 and "title" = \'test\' and "created_at" > \'2016-11-03 21:00:00\' limit 1',
         ];
 
         $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
@@ -102,6 +104,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         Post::all();
         Post::find(1);
         Post::find('2');
+        Post::where('price', '>', 123.45)->get();
+        Post::where('price', '<', '543.21')->get();
         Post::where('is_enabled', true)->get();
         Post::where('is_enabled', 1)->get();
         Post::where('is_enabled', '1')->get();
