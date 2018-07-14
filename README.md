@@ -9,7 +9,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/db-profiler/downloads)](https://packagist.org/packages/illuminated/db-profiler)
 [![License](https://poser.pugx.org/illuminated/db-profiler/license)](https://packagist.org/packages/illuminated/db-profiler)
 
-Database queries profiling for Laravel http and console applications.
+Database queries profiling for Laravel web and console applications.
 
 | Laravel | Database Profiler                                                      |
 | ------- | :--------------------------------------------------------------------: |
@@ -34,11 +34,11 @@ Enabled only for `local` environment, you don't need to bother about `production
 
 2. Use `vvv` request parameter or `-vvv` cli option to enable profiling.
 
-## HTTP Profiling
+## Web Profiling
 
-Use `vvv` request parameter for http profiling:
+Use `vvv` request parameter for web profiling:
 
-![Http example](doc/img/example-http.gif)
+![Web example](doc/img/example-web.gif)
 
 ## Console Profiling
 
