@@ -22,7 +22,7 @@ Database queries profiling for Laravel web and console applications.
 
 Enabled only for `local` environment, you don't need to bother about `production`.
 
-> If you wish to enable profiling on other environments, use `db-profiler.force` config variable.
+> If you want to enable profiling on other environments, use `db-profiler.force` config variable.
 
 ## Usage
 
