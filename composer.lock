@@ -2087,16 +2087,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.6.3",
+            "version": "5.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "8affa02779e95a42adda4fb0df829723b04fa636"
+                "reference": "2ebff1ab58045b98329fe6a71797f1b4c272efcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/8affa02779e95a42adda4fb0df829723b04fa636",
-                "reference": "8affa02779e95a42adda4fb0df829723b04fa636",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/2ebff1ab58045b98329fe6a71797f1b4c272efcb",
+                "reference": "2ebff1ab58045b98329fe6a71797f1b4c272efcb",
                 "shasum": ""
             },
             "require": {
@@ -2139,20 +2139,20 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2018-07-14T10:21:38+00:00"
+            "time": "2018-07-14T11:27:34+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.6.2",
+            "version": "5.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "7ff1d7356899437ba2c72cc2b8b550038299b9b4"
+                "reference": "139326761725500fe758bd1d33a9d9581d42f925"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/7ff1d7356899437ba2c72cc2b8b550038299b9b4",
-                "reference": "7ff1d7356899437ba2c72cc2b8b550038299b9b4",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/139326761725500fe758bd1d33a9d9581d42f925",
+                "reference": "139326761725500fe758bd1d33a9d9581d42f925",
                 "shasum": ""
             },
             "require": {
@@ -2189,7 +2189,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2018-07-14T10:27:24+00:00"
+            "time": "2018-07-14T13:18:09+00:00"
         },
         {
             "name": "mockery/mockery",
