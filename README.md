@@ -9,7 +9,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/db-profiler/downloads)](https://packagist.org/packages/illuminated/db-profiler)
 [![License](https://poser.pugx.org/illuminated/db-profiler/license)](https://packagist.org/packages/illuminated/db-profiler)
 
-Provides database queries profiling for Laravel http and console applications.
+Database queries profiling for Laravel http and console applications.
 
 | Laravel | Database Profiler                                                      |
 | ------- | :--------------------------------------------------------------------: |
@@ -32,7 +32,7 @@ Enabled only for `local` environment, you don't need to bother about `production
     composer require "illuminated/db-profiler:5.6.*"
     ```
 
-2. That's it! Use `vvv` request parameter or `-vvv` cli option to enable profiling.
+2. Use `vvv` request parameter or `-vvv` cli option to enable profiling.
 
 ## HTTP Profiling
 

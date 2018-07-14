@@ -281,16 +281,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.26",
+            "version": "v5.6.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7047df295e77cecb6a2f84736a732af66cc6789c"
+                "reference": "2fe661f2444410a576aa40054ad9b7fe0bb5cee5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7047df295e77cecb6a2f84736a732af66cc6789c",
-                "reference": "7047df295e77cecb6a2f84736a732af66cc6789c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2fe661f2444410a576aa40054ad9b7fe0bb5cee5",
+                "reference": "2fe661f2444410a576aa40054ad9b7fe0bb5cee5",
                 "shasum": ""
             },
             "require": {
@@ -416,7 +416,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-06-20T14:21:11+00:00"
+            "time": "2018-07-10T13:47:01+00:00"
         },
         {
             "name": "league/flysystem",
@@ -635,16 +635,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.15",
+            "version": "v2.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09"
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/29af24f25bab834fcbb38ad2a69fa93b867e070d",
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
                 "shasum": ""
             },
             "require": {
@@ -680,7 +680,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-06-08T15:26:40+00:00"
+            "time": "2018-07-04T16:31:37+00:00"
         },
         {
             "name": "psr/container",
@@ -908,16 +908,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.0.2",
+            "version": "v6.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "412333372fb6c8ffb65496a2bbd7321af75733fc"
+                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/412333372fb6c8ffb65496a2bbd7321af75733fc",
-                "reference": "412333372fb6c8ffb65496a2bbd7321af75733fc",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
+                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
                 "shasum": ""
             },
             "require": {
@@ -928,10 +928,14 @@
                 "mockery/mockery": "~0.9.1",
                 "symfony/phpunit-bridge": "~3.3@dev"
             },
+            "suggest": {
+                "ext-intl": "Needed to support internationalized email addresses",
+                "true/punycode": "Needed to support internationalized email addresses, if ext-intl is not installed"
+            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.1-dev"
                 }
             },
             "autoload": {
@@ -953,13 +957,13 @@
                 }
             ],
             "description": "Swiftmailer, free feature-rich PHP mailer",
-            "homepage": "http://swiftmailer.symfony.com",
+            "homepage": "https://swiftmailer.symfony.com",
             "keywords": [
                 "email",
                 "mail",
                 "mailer"
             ],
-            "time": "2017-09-30T22:39:41+00:00"
+            "time": "2018-07-13T07:04:35+00:00"
         },
         {
             "name": "symfony/console",
@@ -1985,16 +1989,16 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "v1.7.1",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "d3ed4cc37051c1ca52d22d76b437d14809fc7e0d"
+                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d3ed4cc37051c1ca52d22d76b437d14809fc7e0d",
-                "reference": "d3ed4cc37051c1ca52d22d76b437d14809fc7e0d",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/f72816b43e74063c8b10357394b6bba8cb1c10de",
+                "reference": "f72816b43e74063c8b10357394b6bba8cb1c10de",
                 "shasum": ""
             },
             "require": {
@@ -2002,7 +2006,7 @@
             },
             "require-dev": {
                 "ext-intl": "*",
-                "phpunit/phpunit": "^4.0 || ^5.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
                 "squizlabs/php_codesniffer": "^1.5"
             },
             "type": "library",
@@ -2031,7 +2035,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2017-08-15T16:48:10+00:00"
+            "time": "2018-07-12T10:23:15+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -2083,16 +2087,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.6.2",
+            "version": "5.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "8f3479f53ca42ccf3ffabe8ba14e1cebb577b6da"
+                "reference": "8affa02779e95a42adda4fb0df829723b04fa636"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/8f3479f53ca42ccf3ffabe8ba14e1cebb577b6da",
-                "reference": "8f3479f53ca42ccf3ffabe8ba14e1cebb577b6da",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/8affa02779e95a42adda4fb0df829723b04fa636",
+                "reference": "8affa02779e95a42adda4fb0df829723b04fa636",
                 "shasum": ""
             },
             "require": {
@@ -2129,26 +2133,26 @@
                     "email": "dmitry.g.ivanov@gmail.com"
                 }
             ],
-            "description": "Provides Laravel-specific and pure PHP helper functions.",
+            "description": "Laravel-specific and pure PHP helper functions.",
             "keywords": [
                 "function",
                 "helper",
                 "laravel"
             ],
-            "time": "2018-02-23T10:13:24+00:00"
+            "time": "2018-07-14T10:21:38+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.6.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "da0591e7bb7feceb6ec3bd8411dc4844b5e796bb"
+                "reference": "7ff1d7356899437ba2c72cc2b8b550038299b9b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/da0591e7bb7feceb6ec3bd8411dc4844b5e796bb",
-                "reference": "da0591e7bb7feceb6ec3bd8411dc4844b5e796bb",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/7ff1d7356899437ba2c72cc2b8b550038299b9b4",
+                "reference": "7ff1d7356899437ba2c72cc2b8b550038299b9b4",
                 "shasum": ""
             },
             "require": {
@@ -2178,14 +2182,14 @@
                     "email": "dmitry.g.ivanov@gmail.com"
                 }
             ],
-            "description": "Provides Laravel-specific testing helpers and asserts.",
+            "description": "Laravel-specific testing helpers and asserts.",
             "keywords": [
                 "asserts",
                 "helpers",
                 "laravel",
                 "testing"
             ],
-            "time": "2018-02-18T18:06:32+00:00"
+            "time": "2018-07-14T10:27:24+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -2355,26 +2359,26 @@
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v3.6.5",
+            "version": "v3.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "d089f0fd32a81764fbd98044148a193db828dd52"
+                "reference": "cd0ead2c66877bed5e82e7cb7eea91a8168c29ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/d089f0fd32a81764fbd98044148a193db828dd52",
-                "reference": "d089f0fd32a81764fbd98044148a193db828dd52",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/cd0ead2c66877bed5e82e7cb7eea91a8168c29ba",
+                "reference": "cd0ead2c66877bed5e82e7cb7eea91a8168c29ba",
                 "shasum": ""
             },
             "require": {
-                "fzaninotto/faker": "~1.4",
+                "fzaninotto/faker": "^1.4",
                 "php": ">=7.1"
             },
             "require-dev": {
                 "laravel/framework": "~5.6.13",
-                "mockery/mockery": "~1.0",
-                "phpunit/phpunit": "~7.0"
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^7.0"
             },
             "suggest": {
                 "laravel/framework": "Required for testing (~5.6.13).",
@@ -2415,7 +2419,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2018-03-27T08:00:28+00:00"
+            "time": "2018-07-12T01:01:15+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -3114,16 +3118,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "591a30922f54656695e59b1f39501aec513403da"
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/591a30922f54656695e59b1f39501aec513403da",
-                "reference": "591a30922f54656695e59b1f39501aec513403da",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
                 "shasum": ""
             },
             "require": {
@@ -3174,7 +3178,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2018-06-14T15:05:28+00:00"
+            "time": "2018-07-12T15:12:46+00:00"
         },
         {
             "name": "sebastian/diff",
