@@ -9,7 +9,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/db-profiler/downloads)](https://packagist.org/packages/illuminated/db-profiler)
 [![License](https://poser.pugx.org/illuminated/db-profiler/license)](https://packagist.org/packages/illuminated/db-profiler)
 
-Database queries profiling for Laravel web and console applications.
+DB profiling for Laravel web and console applications.
 
 | Laravel | Database Profiler                                                      |
 | ------- | :--------------------------------------------------------------------: |

@@ -1,6 +1,6 @@
 {
     "name": "illuminated/db-profiler",
-    "description": "Database queries profiling for Laravel web and console applications.",
+    "description": "DB profiling for Laravel web and console applications.",
     "keywords": ["laravel", "db", "database", "profiler", "profiling", "mysql"],
     "license": "MIT",
     "authors": [
