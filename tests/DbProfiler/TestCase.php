@@ -16,6 +16,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     use TestingTools;
 
+    public $mockConsoleOutput = false;
+
     private $env;
     private $eventName;
 

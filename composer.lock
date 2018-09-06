@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ceecf5ef658b329e431d5a994fc1d381",
+    "content-hash": "6b1b8f8523ea313d8c29acd2867469c8",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -281,42 +281,42 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.38",
+            "version": "v5.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "38d838bab9434af79e8ab274ae63f52f7ed45d6e"
+                "reference": "86e1f98a6d2aab018e0257a7cb2ef2110d64a873"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/38d838bab9434af79e8ab274ae63f52f7ed45d6e",
-                "reference": "38d838bab9434af79e8ab274ae63f52f7ed45d6e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/86e1f98a6d2aab018e0257a7cb2ef2110d64a873",
+                "reference": "86e1f98a6d2aab018e0257a7cb2ef2110d64a873",
                 "shasum": ""
             },
             "require": {
-                "doctrine/inflector": "~1.1",
-                "dragonmantank/cron-expression": "~2.0",
-                "erusev/parsedown": "~1.7",
+                "doctrine/inflector": "^1.1",
+                "dragonmantank/cron-expression": "^2.0",
+                "erusev/parsedown": "^1.7",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
                 "league/flysystem": "^1.0.8",
-                "monolog/monolog": "~1.12",
-                "nesbot/carbon": "1.25.*",
+                "monolog/monolog": "^1.12",
+                "nesbot/carbon": "^1.26.3",
                 "php": "^7.1.3",
-                "psr/container": "~1.0",
+                "psr/container": "^1.0",
                 "psr/simple-cache": "^1.0",
                 "ramsey/uuid": "^3.7",
-                "swiftmailer/swiftmailer": "~6.0",
-                "symfony/console": "~4.0",
-                "symfony/debug": "~4.0",
-                "symfony/finder": "~4.0",
-                "symfony/http-foundation": "~4.0",
-                "symfony/http-kernel": "~4.0",
-                "symfony/process": "~4.0",
-                "symfony/routing": "~4.0",
-                "symfony/var-dumper": "~4.0",
+                "swiftmailer/swiftmailer": "^6.0",
+                "symfony/console": "^4.1",
+                "symfony/debug": "^4.1",
+                "symfony/finder": "^4.1",
+                "symfony/http-foundation": "^4.1",
+                "symfony/http-kernel": "^4.1",
+                "symfony/process": "^4.1",
+                "symfony/routing": "^4.1",
+                "symfony/var-dumper": "^4.1",
                 "tijsverkoyen/css-to-inline-styles": "^2.2.1",
-                "vlucas/phpdotenv": "~2.2"
+                "vlucas/phpdotenv": "^2.2"
             },
             "conflict": {
                 "tightenco/collect": "<5.5.33"
@@ -352,43 +352,45 @@
                 "illuminate/view": "self.version"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "~3.0",
-                "doctrine/dbal": "~2.6",
+                "aws/aws-sdk-php": "^3.0",
+                "doctrine/dbal": "^2.6",
                 "filp/whoops": "^2.1.4",
-                "league/flysystem-cached-adapter": "~1.0",
-                "mockery/mockery": "~1.0",
+                "league/flysystem-cached-adapter": "^1.0",
+                "mockery/mockery": "^1.0",
                 "moontoast/math": "^1.1",
-                "orchestra/testbench-core": "3.6.*",
-                "pda/pheanstalk": "~3.0",
-                "phpunit/phpunit": "~7.0",
+                "orchestra/testbench-core": "3.7.*",
+                "pda/pheanstalk": "^3.0",
+                "phpunit/phpunit": "^7.0",
                 "predis/predis": "^1.1.1",
-                "symfony/css-selector": "~4.0",
-                "symfony/dom-crawler": "~4.0"
+                "symfony/css-selector": "^4.1",
+                "symfony/dom-crawler": "^4.1",
+                "true/punycode": "^2.1"
             },
             "suggest": {
-                "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (~3.0).",
-                "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.6).",
+                "aws/aws-sdk-php": "Required to use the SQS queue driver and SES mail driver (^3.0).",
+                "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6).",
                 "ext-pcntl": "Required to use all features of the queue worker.",
                 "ext-posix": "Required to use all features of the queue worker.",
-                "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
-                "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (~6.0).",
-                "laravel/tinker": "Required to use the tinker console command (~1.0).",
-                "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (~1.0).",
-                "league/flysystem-cached-adapter": "Required to use the Flysystem cache (~1.0).",
-                "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (~1.0).",
-                "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (~1.0).",
-                "nexmo/client": "Required to use the Nexmo transport (~1.0).",
-                "pda/pheanstalk": "Required to use the beanstalk queue driver (~3.0).",
-                "predis/predis": "Required to use the redis cache and queue drivers (~1.0).",
-                "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (~3.0).",
-                "symfony/css-selector": "Required to use some of the crawler integration testing tools (~4.0).",
-                "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (~4.0).",
-                "symfony/psr-http-message-bridge": "Required to psr7 bridging features (~1.0)."
+                "fzaninotto/faker": "Required to use the eloquent factory builder (^1.4).",
+                "guzzlehttp/guzzle": "Required to use the Mailgun and Mandrill mail drivers and the ping methods on schedules (^6.0).",
+                "laravel/tinker": "Required to use the tinker console command (^1.0).",
+                "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (^1.0).",
+                "league/flysystem-cached-adapter": "Required to use the Flysystem cache (^1.0).",
+                "league/flysystem-rackspace": "Required to use the Flysystem Rackspace driver (^1.0).",
+                "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
+                "moontoast/math": "Required to use ordered UUIDs (^1.1).",
+                "nexmo/client": "Required to use the Nexmo transport (^1.0).",
+                "pda/pheanstalk": "Required to use the beanstalk queue driver (^3.0).",
+                "predis/predis": "Required to use the redis cache and queue drivers (^1.0).",
+                "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^3.0).",
+                "symfony/css-selector": "Required to use some of the crawler integration testing tools (^4.1).",
+                "symfony/dom-crawler": "Required to use most of the crawler integration testing tools (^4.1).",
+                "symfony/psr-http-message-bridge": "Required to psr7 bridging features (^1.0)."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.6-dev"
+                    "dev-master": "5.7-dev"
                 }
             },
             "autoload": {
@@ -416,7 +418,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-09-04T13:15:09+00:00"
+            "time": "2018-09-06T14:01:05+00:00"
         },
         {
             "name": "league/flysystem",
@@ -582,16 +584,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.25.0",
+            "version": "1.33.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
+                "reference": "55667c1007a99e82030874b1bb14d24d07108413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
-                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/55667c1007a99e82030874b1bb14d24d07108413",
+                "reference": "55667c1007a99e82030874b1bb14d24d07108413",
                 "shasum": ""
             },
             "require": {
@@ -604,13 +606,15 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.23-dev"
+                "laravel": {
+                    "providers": [
+                        "Carbon\\Laravel\\ServiceProvider"
+                    ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Carbon\\": "src/Carbon/"
+                    "": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -631,7 +635,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-19T15:50:49+00:00"
+            "time": "2018-08-07T08:39:47+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2088,30 +2092,30 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.6.5",
+            "version": "5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "8ff503da564ef4058fddae7d146f3325c6ae611c"
+                "reference": "6a8890764fc9e2d06963dbfca4c2ac21cdcf681e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/8ff503da564ef4058fddae7d146f3325c6ae611c",
-                "reference": "8ff503da564ef4058fddae7d146f3325c6ae611c",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/6a8890764fc9e2d06963dbfca4c2ac21cdcf681e",
+                "reference": "6a8890764fc9e2d06963dbfca4c2ac21cdcf681e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "5.6.*",
-                "nesbot/carbon": "^1.20",
+                "illuminate/support": "5.7.*",
+                "nesbot/carbon": "^1.26",
                 "php": "^7.1.3",
-                "spatie/array-to-xml": "^2.2",
-                "symfony/filesystem": "^4.0",
-                "symfony/finder": "^4.0",
-                "symfony/process": "^4.0",
-                "symfony/var-dumper": "^4.0"
+                "spatie/array-to-xml": "^2.7",
+                "symfony/filesystem": "^4.1",
+                "symfony/finder": "^4.1",
+                "symfony/process": "^4.1",
+                "symfony/var-dumper": "^4.1"
             },
             "require-dev": {
-                "illuminated/testing-tools": "5.6.*",
+                "illuminated/testing-tools": "5.7.*",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^7.0"
             },
@@ -2140,31 +2144,30 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2018-07-23T16:21:07+00:00"
+            "time": "2018-09-06T16:21:10+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.6.4",
+            "version": "5.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "ab675927d2951b822d5042ff95a1f53a0f9ec0d2"
+                "reference": "ef7eb25af6cce801d35f6643c19ed052838954e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/ab675927d2951b822d5042ff95a1f53a0f9ec0d2",
-                "reference": "ab675927d2951b822d5042ff95a1f53a0f9ec0d2",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/ef7eb25af6cce801d35f6643c19ed052838954e9",
+                "reference": "ef7eb25af6cce801d35f6643c19ed052838954e9",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "5.6.*",
-                "illuminate/support": "5.6.*",
+                "illuminate/database": "5.7.*",
+                "illuminate/support": "5.7.*",
                 "mockery/mockery": "^1.0",
                 "php": "^7.1.3"
             },
             "require-dev": {
-                "illuminated/helper-functions": "5.6.*",
-                "orchestra/testbench": "3.6.*",
+                "orchestra/testbench": "3.7.*",
                 "phpunit/phpunit": "^7.0"
             },
             "type": "library",
@@ -2190,7 +2193,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2018-07-23T16:54:52+00:00"
+            "time": "2018-09-06T17:39:32+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -2308,21 +2311,21 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v3.6.5",
+            "version": "v3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "74a7e330f375fe578a86176cefabeaf8b1636f15"
+                "reference": "39582871eaa28d4d5fa844f58627acda402ce621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/74a7e330f375fe578a86176cefabeaf8b1636f15",
-                "reference": "74a7e330f375fe578a86176cefabeaf8b1636f15",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/39582871eaa28d4d5fa844f58627acda402ce621",
+                "reference": "39582871eaa28d4d5fa844f58627acda402ce621",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.6.13",
-                "orchestra/testbench-core": "~3.6.6",
+                "laravel/framework": "~5.7.0",
+                "orchestra/testbench-core": "~3.7.0",
                 "php": ">=7.1",
                 "phpunit/phpunit": "^7.0"
             },
@@ -2332,7 +2335,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.6-dev"
+                    "dev-master": "3.7-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2356,20 +2359,20 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2018-08-06T20:41:43+00:00"
+            "time": "2018-08-23T02:31:13+00:00"
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v3.6.6",
+            "version": "v3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "cd0ead2c66877bed5e82e7cb7eea91a8168c29ba"
+                "reference": "21d142febca221382f4a18d3ba7590bf5ed824b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/cd0ead2c66877bed5e82e7cb7eea91a8168c29ba",
-                "reference": "cd0ead2c66877bed5e82e7cb7eea91a8168c29ba",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/21d142febca221382f4a18d3ba7590bf5ed824b8",
+                "reference": "21d142febca221382f4a18d3ba7590bf5ed824b8",
                 "shasum": ""
             },
             "require": {
@@ -2377,21 +2380,21 @@
                 "php": ">=7.1"
             },
             "require-dev": {
-                "laravel/framework": "~5.6.13",
+                "laravel/framework": "~5.7.0",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^7.0"
             },
             "suggest": {
-                "laravel/framework": "Required for testing (~5.6.13).",
-                "mockery/mockery": "Allow to use Mockery for testing (~1.0).",
-                "orchestra/testbench-browser-kit": "Allow to use legacy Laravel BrowserKit for testing (~3.6).",
-                "orchestra/testbench-dusk": "Allow to use Laravel Dusk for testing (~3.6).",
-                "phpunit/phpunit": "Allow to use PHPUnit for testing (~7.0)."
+                "laravel/framework": "Required for testing (~5.7.0).",
+                "mockery/mockery": "Allow to use Mockery for testing (^1.0).",
+                "orchestra/testbench-browser-kit": "Allow to use legacy Laravel BrowserKit for testing (~3.7).",
+                "orchestra/testbench-dusk": "Allow to use Laravel Dusk for testing (~3.7).",
+                "phpunit/phpunit": "Allow to use PHPUnit for testing (^7.0)."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.6-dev"
+                    "dev-master": "3.7-dev"
                 }
             },
             "autoload": {
@@ -2420,7 +2423,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2018-07-12T01:01:15+00:00"
+            "time": "2018-09-04T15:43:36+00:00"
         },
         {
             "name": "phar-io/manifest",
