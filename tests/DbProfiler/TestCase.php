@@ -2,13 +2,13 @@
 
 namespace Illuminated\Database\DbProfiler\Tests;
 
-use Illuminate\Database\Events\QueryExecuted;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\DB;
-use Illuminated\Database\DbProfilerServiceProvider;
-use Illuminated\Testing\TestingTools;
-use Mockery;
 use Post;
+use Mockery;
+use Illuminate\Support\Facades\DB;
+use Illuminated\Testing\TestingTools;
+use Illuminate\Foundation\Application;
+use Illuminate\Database\Events\QueryExecuted;
+use Illuminated\Database\DbProfilerServiceProvider;
 
 Mockery::globalHelpers();
 
