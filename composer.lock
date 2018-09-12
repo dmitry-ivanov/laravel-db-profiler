@@ -281,16 +281,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.7.2",
+            "version": "v5.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "86e1f98a6d2aab018e0257a7cb2ef2110d64a873"
+                "reference": "536a024e3ef6b93f55f4039a7f4568efa7e60aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/86e1f98a6d2aab018e0257a7cb2ef2110d64a873",
-                "reference": "86e1f98a6d2aab018e0257a7cb2ef2110d64a873",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/536a024e3ef6b93f55f4039a7f4568efa7e60aea",
+                "reference": "536a024e3ef6b93f55f4039a7f4568efa7e60aea",
                 "shasum": ""
             },
             "require": {
@@ -418,7 +418,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-09-06T14:01:05+00:00"
+            "time": "2018-09-11T13:42:55+00:00"
         },
         {
             "name": "league/flysystem",
@@ -910,16 +910,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.1.2",
+            "version": "v6.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8"
+                "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
-                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8ddcb66ac10c392d3beb54829eef8ac1438595f4",
+                "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4",
                 "shasum": ""
             },
             "require": {
@@ -965,7 +965,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2018-07-13T07:04:35+00:00"
+            "time": "2018-09-11T07:12:52+00:00"
         },
         {
             "name": "symfony/console",
@@ -2092,16 +2092,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.7.0",
+            "version": "5.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "6a8890764fc9e2d06963dbfca4c2ac21cdcf681e"
+                "reference": "afb577f6c5782032c19a595de1ef4af6a4d52572"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/6a8890764fc9e2d06963dbfca4c2ac21cdcf681e",
-                "reference": "6a8890764fc9e2d06963dbfca4c2ac21cdcf681e",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/afb577f6c5782032c19a595de1ef4af6a4d52572",
+                "reference": "afb577f6c5782032c19a595de1ef4af6a4d52572",
                 "shasum": ""
             },
             "require": {
@@ -2144,20 +2144,20 @@
                 "helper",
                 "laravel"
             ],
-            "time": "2018-09-06T16:21:10+00:00"
+            "time": "2018-09-12T22:38:43+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.7.1",
+            "version": "5.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "ef7eb25af6cce801d35f6643c19ed052838954e9"
+                "reference": "2b12189a8781763497cb3d72426613148061be8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/ef7eb25af6cce801d35f6643c19ed052838954e9",
-                "reference": "ef7eb25af6cce801d35f6643c19ed052838954e9",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/2b12189a8781763497cb3d72426613148061be8d",
+                "reference": "2b12189a8781763497cb3d72426613148061be8d",
                 "shasum": ""
             },
             "require": {
@@ -2193,7 +2193,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2018-09-06T17:39:32+00:00"
+            "time": "2018-09-12T23:03:19+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -2363,16 +2363,16 @@
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v3.7.0",
+            "version": "v3.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "21d142febca221382f4a18d3ba7590bf5ed824b8"
+                "reference": "72579b24435463dd846e323d097b6ddc8af257d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/21d142febca221382f4a18d3ba7590bf5ed824b8",
-                "reference": "21d142febca221382f4a18d3ba7590bf5ed824b8",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/72579b24435463dd846e323d097b6ddc8af257d8",
+                "reference": "72579b24435463dd846e323d097b6ddc8af257d8",
                 "shasum": ""
             },
             "require": {
@@ -2380,12 +2380,12 @@
                 "php": ">=7.1"
             },
             "require-dev": {
-                "laravel/framework": "~5.7.0",
+                "laravel/framework": "~5.7.4",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^7.0"
             },
             "suggest": {
-                "laravel/framework": "Required for testing (~5.7.0).",
+                "laravel/framework": "Required for testing (~5.7.4).",
                 "mockery/mockery": "Allow to use Mockery for testing (^1.0).",
                 "orchestra/testbench-browser-kit": "Allow to use legacy Laravel BrowserKit for testing (~3.7).",
                 "orchestra/testbench-dusk": "Allow to use Laravel Dusk for testing (~3.7).",
@@ -2423,7 +2423,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2018-09-04T15:43:36+00:00"
+            "time": "2018-09-12T09:41:23+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -2993,16 +2993,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.3.4",
+            "version": "7.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "0356331bf62896dc56e3a15030b23b73f38b2935"
+                "reference": "7b331efabbb628c518c408fdfcaf571156775de2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0356331bf62896dc56e3a15030b23b73f38b2935",
-                "reference": "0356331bf62896dc56e3a15030b23b73f38b2935",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7b331efabbb628c518c408fdfcaf571156775de2",
+                "reference": "7b331efabbb628c518c408fdfcaf571156775de2",
                 "shasum": ""
             },
             "require": {
@@ -3073,7 +3073,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-09-05T09:58:53+00:00"
+            "time": "2018-09-08T15:14:29+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

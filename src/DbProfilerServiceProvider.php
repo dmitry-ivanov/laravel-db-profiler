@@ -2,9 +2,9 @@
 
 namespace Illuminated\Database;
 
-use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Events\QueryExecuted;
 
 class DbProfilerServiceProvider extends ServiceProvider
 {
