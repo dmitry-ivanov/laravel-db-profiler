@@ -2092,16 +2092,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.7.1",
+            "version": "5.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "afb577f6c5782032c19a595de1ef4af6a4d52572"
+                "reference": "c505e214820b5789eecb446c9eaedfe6f68ebd59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/afb577f6c5782032c19a595de1ef4af6a4d52572",
-                "reference": "afb577f6c5782032c19a595de1ef4af6a4d52572",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/c505e214820b5789eecb446c9eaedfe6f68ebd59",
+                "reference": "c505e214820b5789eecb446c9eaedfe6f68ebd59",
                 "shasum": ""
             },
             "require": {
@@ -2140,24 +2140,25 @@
             ],
             "description": "Laravel-specific and pure PHP helper functions.",
             "keywords": [
-                "function",
-                "helper",
+                "collection",
+                "functions",
+                "helpers",
                 "laravel"
             ],
-            "time": "2018-09-12T22:38:43+00:00"
+            "time": "2018-09-13T09:54:44+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.7.2",
+            "version": "5.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "2b12189a8781763497cb3d72426613148061be8d"
+                "reference": "509d3b0f58ca0bf45d4467ae2f463d09aecc07fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/2b12189a8781763497cb3d72426613148061be8d",
-                "reference": "2b12189a8781763497cb3d72426613148061be8d",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/509d3b0f58ca0bf45d4467ae2f463d09aecc07fb",
+                "reference": "509d3b0f58ca0bf45d4467ae2f463d09aecc07fb",
                 "shasum": ""
             },
             "require": {
@@ -2193,7 +2194,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2018-09-12T23:03:19+00:00"
+            "time": "2018-09-13T09:40:46+00:00"
         },
         {
             "name": "mockery/mockery",
