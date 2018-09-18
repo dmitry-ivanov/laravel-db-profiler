@@ -422,26 +422,26 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.46",
+            "version": "1.0.47",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2"
+                "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a11e4a75f256bdacf99d20780ce42d3b8272975c",
+                "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c",
                 "shasum": ""
             },
             "require": {
+                "ext-fileinfo": "*",
                 "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
-                "ext-fileinfo": "*",
                 "phpspec/phpspec": "^3.4",
                 "phpunit/phpunit": "^5.7.10"
             },
@@ -502,7 +502,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-08-22T07:45:22+00:00"
+            "time": "2018-09-14T15:30:29+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -2092,16 +2092,16 @@
         },
         {
             "name": "illuminated/helper-functions",
-            "version": "5.7.3",
+            "version": "5.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-helper-functions.git",
-                "reference": "c505e214820b5789eecb446c9eaedfe6f68ebd59"
+                "reference": "4341cf935daef2fda9a09d8ad2ec8ef838689515"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/c505e214820b5789eecb446c9eaedfe6f68ebd59",
-                "reference": "c505e214820b5789eecb446c9eaedfe6f68ebd59",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-helper-functions/zipball/4341cf935daef2fda9a09d8ad2ec8ef838689515",
+                "reference": "4341cf935daef2fda9a09d8ad2ec8ef838689515",
                 "shasum": ""
             },
             "require": {
@@ -2145,20 +2145,20 @@
                 "helpers",
                 "laravel"
             ],
-            "time": "2018-09-13T09:54:44+00:00"
+            "time": "2018-09-18T11:53:41+00:00"
         },
         {
             "name": "illuminated/testing-tools",
-            "version": "5.7.3",
+            "version": "5.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dmitry-ivanov/laravel-testing-tools.git",
-                "reference": "509d3b0f58ca0bf45d4467ae2f463d09aecc07fb"
+                "reference": "06c5ab913ac617ec79aefbf6a08f3accc32015a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/509d3b0f58ca0bf45d4467ae2f463d09aecc07fb",
-                "reference": "509d3b0f58ca0bf45d4467ae2f463d09aecc07fb",
+                "url": "https://api.github.com/repos/dmitry-ivanov/laravel-testing-tools/zipball/06c5ab913ac617ec79aefbf6a08f3accc32015a5",
+                "reference": "06c5ab913ac617ec79aefbf6a08f3accc32015a5",
                 "shasum": ""
             },
             "require": {
@@ -2194,7 +2194,7 @@
                 "laravel",
                 "testing"
             ],
-            "time": "2018-09-13T09:40:46+00:00"
+            "time": "2018-09-18T12:00:26+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -2364,16 +2364,16 @@
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v3.7.2",
+            "version": "v3.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "72579b24435463dd846e323d097b6ddc8af257d8"
+                "reference": "cfddff2e51f868b09aa9e66c67664c0cd32438cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/72579b24435463dd846e323d097b6ddc8af257d8",
-                "reference": "72579b24435463dd846e323d097b6ddc8af257d8",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/cfddff2e51f868b09aa9e66c67664c0cd32438cc",
+                "reference": "cfddff2e51f868b09aa9e66c67664c0cd32438cc",
                 "shasum": ""
             },
             "require": {
@@ -2424,7 +2424,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2018-09-12T09:41:23+00:00"
+            "time": "2018-09-13T09:05:08+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -2808,20 +2808,23 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "cecbc684605bb0cc288828eb5d65d93d5c676d3c"
+                "reference": "050bedf145a257b1ff02746c31894800e5122946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/cecbc684605bb0cc288828eb5d65d93d5c676d3c",
-                "reference": "cecbc684605bb0cc288828eb5d65d93d5c676d3c",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/050bedf145a257b1ff02746c31894800e5122946",
+                "reference": "050bedf145a257b1ff02746c31894800e5122946",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.1"
             },
             "type": "library",
             "extra": {
@@ -2851,7 +2854,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2018-06-11T11:44:00+00:00"
+            "time": "2018-09-13T20:33:42+00:00"
         },
         {
             "name": "phpunit/php-text-template",
@@ -3641,16 +3644,16 @@
         },
         {
             "name": "spatie/array-to-xml",
-            "version": "2.7.1",
+            "version": "2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/array-to-xml.git",
-                "reference": "cb8befcd0c58ccf8baa5491e61a5c1d02a3acbba"
+                "reference": "2b01cb1a04b4b65f0db03cd8a78df4b978fe5cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/cb8befcd0c58ccf8baa5491e61a5c1d02a3acbba",
-                "reference": "cb8befcd0c58ccf8baa5491e61a5c1d02a3acbba",
+                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/2b01cb1a04b4b65f0db03cd8a78df4b978fe5cd7",
+                "reference": "2b01cb1a04b4b65f0db03cd8a78df4b978fe5cd7",
                 "shasum": ""
             },
             "require": {
@@ -3686,7 +3689,7 @@
                 "convert",
                 "xml"
             ],
-            "time": "2018-02-20T15:21:24+00:00"
+            "time": "2018-09-17T11:45:05+00:00"
         },
         {
             "name": "symfony/filesystem",
