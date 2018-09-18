@@ -29,7 +29,7 @@ Enabled only for `local` environment, you don't need to bother about `production
 
 ## Usage
 
-1. Install package through `composer`:
+1. Install the package via Composer:
 
     ```shell
     composer require illuminated/db-profiler
