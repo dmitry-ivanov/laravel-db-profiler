@@ -3,23 +3,21 @@
     "description": "DB profiling for Laravel web and console applications.",
     "keywords": ["laravel", "db", "database", "profiler", "profiling", "mysql"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Dmitry Ivanov",
-            "email": "dmitry.g.ivanov@gmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "Dmitry Ivanov",
+        "email": "dmitry.g.ivanov@gmail.com"
+    }],
     "require": {
         "php": "^7.1.3",
-        "illuminate/support": "5.7.*",
-        "illuminate/database": "5.7.*"
+        "illuminate/support": "5.8.*",
+        "illuminate/database": "5.8.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0",
+        "phpunit/phpunit": "^7.5|^8.0",
         "mockery/mockery": "^1.0",
-        "orchestra/testbench": "3.7.*",
-        "illuminated/testing-tools": "5.7.*",
-        "illuminated/helper-functions": "5.7.*"
+        "orchestra/testbench": "3.8.*",
+        "illuminated/testing-tools": "5.8.*",
+        "illuminated/helper-functions": "5.8.*"
     },
     "autoload": {
         "psr-4": {

@@ -21,7 +21,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private $env;
     private $eventName;
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -141,7 +141,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         return "/{$pattern}; (.*? ms)/";
     }
 
-    public function tearDown()
+    protected function tearDown(): void
     {
         $dispatcher = DB::getEventDispatcher();
         if ($dispatcher->hasListeners($this->eventName)) {
