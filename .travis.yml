@@ -8,8 +8,7 @@ install:
   - composer update
   - composer require php-coveralls/php-coveralls --dev
 
-script:
-  - vendor/bin/phpunit --coverage-clover ./tests/logs/clover.xml
+script: vendor/bin/phpunit --verbose --coverage-clover build/logs/clover.xml
 
 after_script:
   - php vendor/bin/php-coveralls -v
