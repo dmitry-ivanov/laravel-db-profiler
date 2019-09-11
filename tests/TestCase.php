@@ -1,12 +1,12 @@
 <?php
 
-namespace Illuminated\Database\DbProfiler\Tests;
+namespace Illuminated\Database\Tests;
 
-use Post;
 use Mockery;
 use Illuminate\Support\Facades\DB;
 use Illuminated\Testing\TestingTools;
 use Illuminate\Foundation\Application;
+use Illuminated\Database\Tests\App\Post;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminated\Database\DbProfilerServiceProvider;
 

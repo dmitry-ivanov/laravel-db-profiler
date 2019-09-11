@@ -25,10 +25,10 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/DbProfiler/TestCase.php",
-            "tests/DbProfiler/fixture/app"
-        ]
+        "psr-4": {
+            "Illuminated\\Database\\Tests\\": "tests/",
+            "Illuminated\\Database\\Tests\\App\\": "tests/fixture/app/"
+        }
     },
     "extra": {
         "laravel": {

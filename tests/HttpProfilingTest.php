@@ -1,17 +1,17 @@
 <?php
 
-namespace Illuminated\Database\DbProfiler\Tests;
+namespace Illuminated\Database\Tests;
 
-class ConsoleProfilingTest extends TestCase
+class HttpProfilingTest extends TestCase
 {
     protected function runningInConsole()
     {
-        return true;
+        return false;
     }
 
     protected function withVvv()
     {
-        $_SERVER['argv']['-vvv'] = true;
+        request()['vvv'] = true;
         return $this;
     }
 
@@ -23,14 +23,14 @@ class ConsoleProfilingTest extends TestCase
     }
 
     /** @test */
-    public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_option()
+    public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_request_param()
     {
         $this->local()->boot();
         $this->assertDbProfilerNotActivated();
     }
 
     /** @test */
-    public function it_is_enabled_if_environment_is_local_and_there_is_vvv_option()
+    public function it_is_enabled_if_environment_is_local_and_there_is_vvv_request_param()
     {
         $this->local()->withVvv()->boot();
         $this->assertDbProfilerActivated();
