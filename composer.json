@@ -1,8 +1,12 @@
 {
     "name": "illuminated/db-profiler",
     "description": "DB profiling for Laravel web and console applications.",
-    "keywords": ["laravel", "db", "database", "profiler", "profiling", "mysql"],
+    "keywords": ["laravel", "db", "database", "profiler", "profiling", "sql", "mysql"],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/dmitry-ivanov/laravel-db-profiler/issues",
+        "source": "https://github.com/dmitry-ivanov/laravel-db-profiler"
+    },
     "authors": [{
         "name": "Dmitry Ivanov",
         "email": "dmitry.g.ivanov@gmail.com"
@@ -36,5 +40,10 @@
                 "Illuminated\\Database\\DbProfilerServiceProvider"
             ]
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
