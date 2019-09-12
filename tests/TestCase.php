@@ -37,8 +37,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     private function setUpDatabase()
     {
         config(['database.default' => 'testing']);
-
-        DB::statement('PRAGMA foreign_keys = ON');
+        config(['database.connections.testing.foreign_key_constraints' => true]);
 
         $this->artisan('migrate', [
             '--database' => 'testing',
