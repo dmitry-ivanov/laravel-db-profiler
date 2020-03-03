@@ -2,13 +2,13 @@
 
 namespace Illuminated\Database\Tests;
 
-use Mockery;
-use Illuminate\Support\Facades\DB;
-use Illuminated\Testing\TestingTools;
-use Illuminate\Foundation\Application;
-use Illuminated\Database\Tests\App\Post;
 use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\DB;
 use Illuminated\Database\DbProfilerServiceProvider;
+use Illuminated\Database\Tests\App\Post;
+use Illuminated\Testing\TestingTools;
+use Mockery;
 
 Mockery::globalHelpers();
 
@@ -16,24 +16,37 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     use TestingTools;
 
+    /**
+     * Indicates if the console output should be mocked.
+     *
+     * @var bool
+     */
     public $mockConsoleOutput = false;
 
+    /**
+     * The emulated environment.
+     *
+     * @var string
+     */
     private $env;
-    private $eventName;
 
+    /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->setUpEventName();
         $this->setUpDatabase();
     }
 
-    private function setUpEventName()
-    {
-        $this->eventName = QueryExecuted::class;
-    }
-
+    /**
+     * Setup the database.
+     *
+     * @return void
+     */
     private function setUpDatabase()
     {
         config(['database.default' => 'testing']);
@@ -46,45 +59,92 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->seeInArtisanOutput('Migrated');
     }
 
+    /**
+     * Emulate the local environment.
+     *
+     * @return $this
+     */
     protected function local()
     {
         $this->env = 'local';
+
         return $this;
     }
 
+    /**
+     * Emulate the non-local environment.
+     *
+     * @return $this
+     */
     protected function notLocal()
     {
         $this->env = 'production';
+
         return $this;
     }
 
+    /**
+     * Define whether the app is running in console or not.
+     *
+     * @return bool
+     */
     abstract protected function runningInConsole();
 
+    /**
+     * Emulate the "vvv" flag set.
+     *
+     * @return $this
+     */
     abstract protected function withVvv();
 
+    /**
+     * Emulate the app boot.
+     *
+     * @return void
+     */
     protected function boot()
     {
         $app = mock(Application::class);
-        $app->expects()->isLocal()->andReturn($this->env == 'local');
-        $app->allows()->runningInConsole()->andReturn($this->runningInConsole());
+        $app->expects('isLocal')->andReturn($this->env == 'local');
+        $app->allows('runningInConsole')->andReturn($this->runningInConsole());
 
-        $provider = new DbProfilerServiceProvider($app);
-        $provider->boot();
+        (new DbProfilerServiceProvider($app))->boot();
     }
 
+    /**
+     * Assert that the database profiler is activated.
+     *
+     * @return void
+     */
     protected function assertDbProfilerActivated()
     {
-        $this->assertTrue(DB::getEventDispatcher()->hasListeners($this->eventName));
+        /** @var \Illuminate\Database\Connection $connection */
+        $connection = DB::connection();
+        $dispatcher = $connection->getEventDispatcher();
+        $this->assertTrue($dispatcher->hasListeners(QueryExecuted::class));
     }
 
+    /**
+     * Assert that the database profiler is not activated.
+     *
+     * @return void
+     */
     protected function assertDbProfilerNotActivated()
     {
-        $this->assertFalse(DB::getEventDispatcher()->hasListeners($this->eventName));
+        /** @var \Illuminate\Database\Connection $connection */
+        $connection = DB::connection();
+        $dispatcher = $connection->getEventDispatcher();
+        $this->assertFalse($dispatcher->hasListeners(QueryExecuted::class));
     }
 
+    /**
+     * Assert that the database queries are dumped.
+     *
+     * @return void
+     */
     protected function assertDbQueriesDumped()
     {
-        $queries = [
+        $queries = collect([
             '[1]: select * from "posts"',
             '[2]: select * from "posts" where "posts"."id" = 1 limit 1',
             '[3]: select * from "posts" where "posts"."id" = \'2\' limit 1',
@@ -102,49 +162,59 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[15]: select * from "posts" where "id" > 3 and "title" = \'foo bar baz\' and "price" > 123.45 and "is_enabled" = 1 and "created_at" > \'2016-11-03 21:00:00\' limit 1',
             '[16]: select * from "posts" where "title" is null',
             '[17]: select * from "posts" where "title" is null and "price" > 123.45',
-        ];
+        ]);
 
         $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
-        foreach ($queries as $query) {
-            $arg = $this->prepareQueryPattern($query);
-            $mock->expects()->dump(Mockery::pattern($arg));
-        }
+        $queries->each(function (string $query) use ($mock) {
+            $queryPattern = $this->prepareQueryPattern($query);
+            $mock->expects('dump')->with(Mockery::pattern($queryPattern));
+        });
 
         Post::all();
-        Post::find(1);
-        Post::find('2');
-        Post::where('title', 'foo bar baz')->get();
-        Post::where('price', '>', 123.45)->get();
-        Post::where('price', '<', '543.21')->get();
-        Post::where('is_enabled', true)->get();
-        Post::where('is_enabled', false)->get();
-        Post::where('is_enabled', 1)->get();
-        Post::where('is_enabled', '1')->get();
-        Post::whereIn('id', [1, '2', 3])->get();
-        Post::whereIn('title', ['foo', 'bar', 'baz'])->get();
-        Post::whereIn('price', [1.23, '2.34', 3.45])->get();
-        Post::whereIn('is_enabled', [true, false, 1, 0, '1', '0'])->get();
-        Post::where('id', '>', 3)
-            ->where('title', 'foo bar baz')
-            ->where('price', '>', 123.45)
-            ->where('is_enabled', true)
-            ->where('created_at', '>', '2016-11-03 21:00:00')
-            ->first();
-        Post::where('title', null)->get();
-        Post::where('title', null)->where('price', '>', 123.45)->get();
+        Post::query()->find(1);
+        Post::query()->find('2');
+        Post::query()->where('title', 'foo bar baz')->get();
+        Post::query()->where('price', '>', 123.45)->get();
+        Post::query()->where('price', '<', '543.21')->get();
+        Post::query()->where('is_enabled', true)->get();
+        Post::query()->where('is_enabled', false)->get();
+        Post::query()->where('is_enabled', 1)->get();
+        Post::query()->where('is_enabled', '1')->get();
+        Post::query()->whereIn('id', [1, '2', 3])->get();
+        Post::query()->whereIn('title', ['foo', 'bar', 'baz'])->get();
+        Post::query()->whereIn('price', [1.23, '2.34', 3.45])->get();
+        Post::query()->whereIn('is_enabled', [true, false, 1, 0, '1', '0'])->get();
+        Post::query()->where('id', '>', 3)->where('title', 'foo bar baz')->where('price', '>', 123.45)->where('is_enabled', true)->where('created_at', '>', '2016-11-03 21:00:00')->first();
+        Post::query()->where('title', null)->get();
+        Post::query()->where('title', null)->where('price', '>', 123.45)->get();
     }
 
-    private function prepareQueryPattern($query)
+    /**
+     * Prepare the query pattern for mocking.
+     *
+     * @param string $query
+     * @return string
+     */
+    private function prepareQueryPattern(string $query)
     {
-        $pattern = preg_quote($query, '/');
-        return "/{$pattern}; (.*? ms)/";
+        $query = preg_quote($query, '/');
+
+        return "/{$query}; (.*? ms)/";
     }
 
+    /**
+     * Clean up the testing environment before the next test.
+     *
+     * @return void
+     */
     protected function tearDown(): void
     {
-        $dispatcher = DB::getEventDispatcher();
-        if ($dispatcher->hasListeners($this->eventName)) {
-            $dispatcher->forget($this->eventName);
+        /** @var \Illuminate\Database\Connection $connection */
+        $connection = DB::connection();
+        $dispatcher = $connection->getEventDispatcher();
+
+        if ($dispatcher->hasListeners(QueryExecuted::class)) {
+            $dispatcher->forget(QueryExecuted::class);
         }
 
         parent::tearDown();
