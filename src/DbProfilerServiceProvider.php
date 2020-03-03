@@ -2,67 +2,78 @@
 
 namespace Illuminated\Database;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Events\QueryExecuted;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class DbProfilerServiceProvider extends ServiceProvider
 {
-    private static $counter;
+    /**
+     * The query counter.
+     *
+     * @var int
+     */
+    private $counter = 1;
 
-    private static function tickCounter()
-    {
-        return self::$counter++;
-    }
-
+    /**
+     * Boot the service provider.
+     *
+     * @return void
+     *
+     * @noinspection ForgottenDebugOutputInspection
+     */
     public function boot()
     {
         if (!$this->isEnabled()) {
             return;
         }
 
-        self::$counter = 1;
-
         DB::listen(function (QueryExecuted $query) {
-            $i = self::tickCounter();
-            $sql = $this->applyBindings($query->sql, $query->bindings);
-            dump("[$i]: {$sql}; ({$query->time} ms)");
+            $i = $this->counter++;
+            $sql = $this->applyQueryBindings($query->sql, $query->bindings);
+            $time = $query->time;
+            dump("[{$i}]: {$sql}; ({$time} ms)");
         });
     }
 
+    /**
+     * Check whether database profiling is enabled or not.
+     *
+     * @return bool
+     */
     private function isEnabled()
     {
-        if (!config('db-profiler.force') && !$this->app->isLocal()) {
+        if (!$this->app->isLocal() && !config('db-profiler.force')) {
             return false;
         }
 
-        if ($this->app->runningInConsole()) {
-            return in_array('-vvv', $_SERVER['argv']);
-        }
-
-        return request()->exists('vvv');
+        return $this->app->runningInConsole()
+            ? collect($_SERVER['argv'])->contains('-vvv')
+            : Request::exists('vvv');
     }
 
-    private function applyBindings($sql, array $bindings)
+    /**
+     * Apply query bindings to the given SQL query.
+     *
+     * @param string $sql
+     * @param array $bindings
+     * @return string
+     */
+    private function applyQueryBindings(string $sql, array $bindings)
     {
-        if (empty($bindings)) {
-            return $sql;
-        }
-
-        foreach ($bindings as $binding) {
+        $bindings = collect($bindings)->map(function ($binding) {
             switch (gettype($binding)) {
                 case 'boolean':
-                    $binding = (int) $binding;
-                    break;
-
+                    return (int) $binding;
                 case 'string':
-                    $binding = "'{$binding}'";
-                    break;
+                    return "'{$binding}'";
+                default:
+                    return $binding;
             }
+        })->toArray();
 
-            $sql = preg_replace('/\?/', $binding, $sql, 1);
-        }
-
-        return $sql;
+        return Str::replaceArray('?', $bindings, $sql);
     }
 }
