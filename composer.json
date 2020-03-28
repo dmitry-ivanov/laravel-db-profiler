@@ -12,16 +12,16 @@
         "email": "dmitry.g.ivanov@gmail.com"
     }],
     "require": {
-        "php": "^7.2",
-        "illuminate/support": "^6.0",
-        "illuminate/database": "^6.0"
+        "php": "^7.2.5",
+        "illuminate/support": "^7.0",
+        "illuminate/database": "^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.3",
-        "mockery/mockery": "^1.2",
-        "orchestra/testbench": "^4.0",
-        "illuminated/testing-tools": "^6.0",
-        "illuminated/helper-functions": "^6.0"
+        "phpunit/phpunit": "^8.4|^9.0",
+        "mockery/mockery": "^1.3.1",
+        "orchestra/testbench": "^5.0",
+        "illuminated/testing-tools": "^7.0",
+        "illuminated/helper-functions": "^7.0"
     },
     "autoload": {
         "psr-4": {
