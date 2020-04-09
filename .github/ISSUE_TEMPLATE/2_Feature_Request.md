@@ -1,6 +1,6 @@
 ---
 name: "💡 Feature Request"
-about: 'If you want to propose the idea.'
+about: 'If you want to propose an idea.'
 ---
 
 ### Description:
