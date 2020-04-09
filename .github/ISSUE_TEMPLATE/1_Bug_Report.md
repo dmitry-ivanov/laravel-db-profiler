@@ -1,5 +1,5 @@
 ---
-name: "🐛 Bug Report"
+name: "🐞 Bug Report"
 about: 'If you want to report an issue.'
 ---
 
@@ -13,5 +13,13 @@ about: 'If you want to report an issue.'
 ...
 
 ### Steps to reproduce:
+
+...
+
+#### Expected:
+
+...
+
+#### Actual:
 
 ...

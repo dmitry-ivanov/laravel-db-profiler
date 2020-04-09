@@ -1,5 +1,5 @@
 <!--
-Provide a descriptive title, thorough description, and tests for your PR.
+Please, provide a descriptive title, thorough description, and tests for your PR.
 
-Keep an eye on all of the continuous integrations: code style, tests, tests coverage, etc.
+Also, make sure that all CI checks have passed: Code Style, Tests, Tests Coverage, etc.
 -->
