@@ -107,8 +107,11 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $app = mock(Application::class);
         $app->expects('isLocal')->andReturn($this->env == 'local');
         $app->allows('runningInConsole')->andReturn($this->runningInConsole());
+        $app->allows('configurationIsCached')->andReturnTrue();
 
-        (new DbProfilerServiceProvider($app))->boot();
+        $serviceProvider = new DbProfilerServiceProvider($app);
+        $serviceProvider->register();
+        $serviceProvider->boot();
     }
 
     /**
