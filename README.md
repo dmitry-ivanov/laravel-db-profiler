@@ -36,7 +36,7 @@ Database Profiler for Laravel Web and Console Applications.
 
 2. Use the `vvv` parameter to enable profiling:
 
-![Web example](doc/img/example-web.gif)
+    ![Web example](doc/img/example-web.gif)
 
 Profiling is enabled only for the `local` environment, so you don't have to worry about `production`.
 
