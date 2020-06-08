@@ -34,21 +34,21 @@ Database Profiler for Laravel Web and Console Applications.
     composer require illuminated/db-profiler
     ```
 
-2. Use the `vvv` parameter to enable profiling:
+2. Use the `vvv` parameter for Web:
 
-    ![Web example](doc/img/example-web.gif)
+    ![Web Application Profiling](doc/img/example-web.gif)
+
+3. Use the `-vvv` option for Console:
+
+    ![Console Application Profiling](doc/img/example-console.gif)
+
+## Local by default
 
 Profiling is enabled only for the `local` environment, so you don't have to worry about `production`.
 
 If you want to force profiling for non-local environments - specify it explicitly in your `.env` file:
 
 > DB_PROFILER_FORCE=true
-
-## Console Profiling
-
-Use the `-vvv` option to enable profiling:
-
-![Console example](doc/img/example-console.gif)
 
 ## License
 
