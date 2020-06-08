@@ -44,7 +44,7 @@ Database Profiler for Laravel Web and Console Applications.
 
 ## Local by default
 
-Profiling is enabled only for the `local` environment, so you don't have to worry about `production`.
+Enabled only for the `local` environment, so you don't have to worry about `production`.
 
 If you want to force profiling for non-local environments - specify it explicitly in your `.env` file:
 
