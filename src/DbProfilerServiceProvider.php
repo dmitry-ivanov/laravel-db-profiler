@@ -18,6 +18,16 @@ class DbProfilerServiceProvider extends ServiceProvider
     private $counter = 1;
 
     /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/db-profiler.php', 'db-profiler');
+    }
+
+    /**
      * Boot the service provider.
      *
      * @return void

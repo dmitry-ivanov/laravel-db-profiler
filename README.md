@@ -11,7 +11,7 @@
 [![Total Downloads](https://poser.pugx.org/illuminated/db-profiler/downloads)](https://packagist.org/packages/illuminated/db-profiler)
 [![License](https://poser.pugx.org/illuminated/db-profiler/license)](https://packagist.org/packages/illuminated/db-profiler)
 
-DB profiling for Laravel web and console applications.
+Database Profiler for Laravel Web and Console Applications.
 
 | Laravel | Database Profiler                                                      |
 | ------- | :--------------------------------------------------------------------: |
@@ -26,34 +26,32 @@ DB profiling for Laravel web and console applications.
 | 5.2.*   | [5.2.*](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/5.2) |
 | 5.1.*   | [5.1.*](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/5.1) |
 
-Enabled only for `local` environment, you don't need to bother about `production`.
-
-> If you want to enable profiling on other environments, use `db-profiler.force` config variable.
-
 ## Usage
 
 1. Install the package via Composer:
 
-    ```shell
+    ```shell script
     composer require "illuminated/db-profiler:^7.0"
     ```
 
-2. Use `vvv` request parameter or `-vvv` cli option to enable profiling.
+2. Use the `vvv` parameter for Web:
 
-## Web Profiling
+    ![Web Application Profiling](doc/img/example-web.gif)
 
-Use `vvv` request parameter for web profiling:
+3. Use the `-vvv` option for Console:
 
-![Web example](doc/img/example-web.gif)
+    ![Console Application Profiling](doc/img/example-console.gif)
 
-## Console Profiling
+## Local by default
 
-Use `-vvv` option for console profiling:
+Enabled only for the `local` environment, so you don't have to worry about `production`.
 
-![Console example](doc/img/example-console.gif)
+If you want to force profiling for non-local environments - specify it explicitly in your `.env` file:
+
+> DB_PROFILER_FORCE=true
 
 ## License
 
-The MIT License. Please see [License File](LICENSE.md) for more information.
+Laravel Database Profiler is open-sourced software licensed under the [MIT license](LICENSE.md).
 
 [<img src="https://user-images.githubusercontent.com/1286821/43086829-ff7c006e-8ea6-11e8-8b03-ecf97ca95b2e.png" alt="Support on Patreon" width="125" />](https://patreon.com/dmitryivanov)

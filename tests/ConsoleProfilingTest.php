@@ -50,4 +50,15 @@ class ConsoleProfilingTest extends TestCase
         $this->assertDbProfilerActivated();
         $this->assertDbQueriesDumped();
     }
+
+    /** @test */
+    public function it_is_enabled_if_environment_is_not_local_but_there_is_a_force_flag_in_config()
+    {
+        config(['db-profiler.force' => true]);
+
+        $this->notLocal()->withVvv()->boot();
+
+        $this->assertDbProfilerActivated();
+        $this->assertDbQueriesDumped();
+    }
 }
