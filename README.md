@@ -36,7 +36,7 @@ Database Profiler for Laravel Web and Console Applications.
 
 2. Use the `vvv` parameter for Web:
 
-    ![Laravel Database Profiler - Demo - Web](doc/img/demo-web.gif)
+    ![Laravel Database Profiler - Demo - Web](doc/img/demo-web-b.gif)
 
 3. Use the `-vvv` option for Console:
 
