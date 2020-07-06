@@ -13,6 +13,8 @@
 
 Database Profiler for Laravel Web and Console Applications.
 
+> A simple tool that works correctly even with `dd()` in your code.
+
 | Laravel | Database Profiler                                                      |
 | ------- | :--------------------------------------------------------------------: |
 | 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/7.x)   |
@@ -36,7 +38,7 @@ Database Profiler for Laravel Web and Console Applications.
 
 2. Use the `vvv` parameter for Web:
 
-    ![Laravel Database Profiler - Demo - Web](doc/img/demo-web-b.gif)
+    ![Laravel Database Profiler - Demo - Web](doc/img/demo-web-c.gif)
 
 3. Use the `-vvv` option for Console:
 
