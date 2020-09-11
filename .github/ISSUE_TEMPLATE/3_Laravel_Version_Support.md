@@ -3,6 +3,8 @@ name: "🛠 Laravel Version Support"
 about: 'If you want to support a new Laravel version.'
 ---
 
+<!-- Here's how to support a new Laravel version. Thanks for your help! 👍 -->
+
 ### Follow these steps:
 
 > Please, note that we have to update versions for everything, not only `illuminate` packages.
