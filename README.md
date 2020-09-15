@@ -19,6 +19,7 @@ Database Profiler for Laravel Web and Console Applications.
 
 | Laravel | Database Profiler                                                      |
 | ------- | :--------------------------------------------------------------------: |
+| 8.x     | [8.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/8.x)   |
 | 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/7.x)   |
 | 6.x     | [6.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/6.x)   |
 | 5.8.*   | [5.8.*](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/5.8) |
