@@ -12,7 +12,7 @@
         "email": "dmitry.g.ivanov@gmail.com"
     }],
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.2.5|^8.0",
         "illuminate/support": "^7.0",
         "illuminate/database": "^7.0"
     },
