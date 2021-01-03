@@ -1,0 +1,45 @@
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [7.2, 7.3, 7.4, 8.0]
+        stability: [prefer-lowest, prefer-stable]
+
+    name: PHP ${{ matrix.php }} / ${{ matrix.stability }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer:v2
+          coverage: xdebug
+
+      - name: Setup problem matchers
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Install dependencies
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 5
+          max_attempts: 5
+          command: composer update --prefer-dist --${{ matrix.stability }} --no-interaction --no-progress --ansi
+
+      - name: Run tests
+        run: vendor/bin/phpunit --verbose --colors=always --coverage-clover ./build/logs/clover.xml
+
+      - name: Code coverage
+        uses: codecov/codecov-action@v1
+        with:
+          file: ./build/logs/clover.xml

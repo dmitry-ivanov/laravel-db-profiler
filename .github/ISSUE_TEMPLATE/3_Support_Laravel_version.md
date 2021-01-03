@@ -8,7 +8,7 @@ about: 'If you want to support a new Laravel version.'
   1. In the package's `composer.json` file:
     - Set all of the `illuminate/%` packages to the new version, i.e. `^6.0`;
     - Set the `php` version according to the Laravel's `composer.json`;
-      - Make proper fixes in the `php` list within the `.travis.yml` file;
+      - Make proper fixes in the `php` list within the `.github/workflows/tests.yml` file;
     - Set versions for all of the packages according to the Laravel's `composer.json`;
   2. Add a new row in the `README.md` file for the new version.
   3. Open the PR:
