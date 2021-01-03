@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4|^9.0",
-        "mockery/mockery": "^1.3.1",
+        "mockery/mockery": "^1.3.2",
         "orchestra/testbench": "^5.0",
         "illuminated/testing-tools": "^7.0",
         "illuminated/helper-functions": "^7.0"
