@@ -4,9 +4,9 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/43083932-4915853a-8ea0-11e8-8983-db9e0f04e772.png" alt="Become a Patron" width="160" />](https://patreon.com/dmitryivanov)
 
-[![StyleCI](https://styleci.io/repos/68023936/shield?branch=master&style=flat)](https://styleci.io/repos/68023936)
-[![Build Status](https://travis-ci.com/dmitry-ivanov/laravel-db-profiler.svg?branch=master)](https://travis-ci.com/dmitry-ivanov/laravel-db-profiler)
-[![Coverage Status](https://coveralls.io/repos/github/dmitry-ivanov/laravel-db-profiler/badge.svg?branch=master)](https://coveralls.io/github/dmitry-ivanov/laravel-db-profiler?branch=master)
+[![StyleCI](https://github.styleci.io/repos/68023936/shield?branch=master&style=flat)](https://github.styleci.io/repos/68023936?branch=master)
+[![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-db-profiler/tests/master)](https://github.com/dmitry-ivanov/laravel-db-profiler/actions?query=workflow%3Atests+branch%3Amaster)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-db-profiler/master)](https://app.codecov.io/gh/dmitry-ivanov/laravel-db-profiler/branch/master)
 
 [![Latest Stable Version](https://poser.pugx.org/illuminated/db-profiler/v/stable)](https://packagist.org/packages/illuminated/db-profiler)
 [![Latest Unstable Version](https://poser.pugx.org/illuminated/db-profiler/v/unstable)](https://packagist.org/packages/illuminated/db-profiler)
