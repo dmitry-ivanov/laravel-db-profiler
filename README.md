@@ -8,10 +8,10 @@
 [![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-db-profiler/tests/master)](https://github.com/dmitry-ivanov/laravel-db-profiler/actions?query=workflow%3Atests+branch%3Amaster)
 [![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-db-profiler/master)](https://app.codecov.io/gh/dmitry-ivanov/laravel-db-profiler/branch/master)
 
-[![Latest Stable Version](https://poser.pugx.org/illuminated/db-profiler/v/stable)](https://packagist.org/packages/illuminated/db-profiler)
-[![Latest Unstable Version](https://poser.pugx.org/illuminated/db-profiler/v/unstable)](https://packagist.org/packages/illuminated/db-profiler)
-[![Total Downloads](https://poser.pugx.org/illuminated/db-profiler/downloads)](https://packagist.org/packages/illuminated/db-profiler)
-[![License](https://poser.pugx.org/illuminated/db-profiler/license)](https://packagist.org/packages/illuminated/db-profiler)
+![Packagist Version](https://img.shields.io/packagist/v/illuminated/db-profiler)
+![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/db-profiler)
+![Packagist Downloads](https://img.shields.io/packagist/dt/illuminated/db-profiler)
+![Packagist License](https://img.shields.io/packagist/l/illuminated/db-profiler)
 
 Database Profiler for Laravel Web and Console Applications.
 
