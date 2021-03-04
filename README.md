@@ -8,10 +8,10 @@
 [![Build Status](https://img.shields.io/github/workflow/status/dmitry-ivanov/laravel-db-profiler/tests/8.x)](https://github.com/dmitry-ivanov/laravel-db-profiler/actions?query=workflow%3Atests+branch%3A8.x)
 [![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-db-profiler/8.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-db-profiler/branch/8.x)
 
-[![Latest Stable Version](https://poser.pugx.org/illuminated/db-profiler/v/stable)](https://packagist.org/packages/illuminated/db-profiler)
-[![Latest Unstable Version](https://poser.pugx.org/illuminated/db-profiler/v/unstable)](https://packagist.org/packages/illuminated/db-profiler)
-[![Total Downloads](https://poser.pugx.org/illuminated/db-profiler/downloads)](https://packagist.org/packages/illuminated/db-profiler)
-[![License](https://poser.pugx.org/illuminated/db-profiler/license)](https://packagist.org/packages/illuminated/db-profiler)
+![Packagist Version](https://img.shields.io/packagist/v/illuminated/db-profiler)
+![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/db-profiler)
+![Packagist Downloads](https://img.shields.io/packagist/dt/illuminated/db-profiler)
+![Packagist License](https://img.shields.io/packagist/l/illuminated/db-profiler)
 
 Database Profiler for Laravel Web and Console Applications.
 
@@ -54,6 +54,10 @@ Enabled only for the `local` environment, so you don't have to worry about `prod
 If you want to force profiling for non-local environments - specify it explicitly in your `.env` file:
 
 > DB_PROFILER_FORCE=true
+
+## Sponsors
+
+[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)
 
 ## License
 
