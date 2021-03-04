@@ -55,6 +55,10 @@ If you want to force profiling for non-local environments - specify it explicitl
 
 > DB_PROFILER_FORCE=true
 
+## Sponsors
+
+[![Laravel Idea](art/sponsor-laravel-idea.png)](https://laravel-idea.com)
+
 ## License
 
 Laravel Database Profiler is open-sourced software licensed under the [MIT license](LICENSE.md).
