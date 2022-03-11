@@ -18,7 +18,8 @@ Database Profiler for Laravel Web and Console Applications.
 > A simple tool that works correctly even with `dd()` in your code.
 
 | Laravel | Database Profiler                                                      |
-| ------- | :--------------------------------------------------------------------: |
+|---------|------------------------------------------------------------------------|
+| 9.x     | [9.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/9.x)   |
 | 8.x     | [8.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/8.x)   |
 | 7.x     | [7.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/7.x)   |
 | 6.x     | [6.x](https://github.com/dmitry-ivanov/laravel-db-profiler/tree/6.x)   |
