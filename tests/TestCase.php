@@ -25,15 +25,11 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * The emulated environment.
-     *
-     * @var string
      */
-    private $env;
+    private string $env;
 
     /**
      * Setup the test environment.
-     *
-     * @return void
      */
     protected function setUp(): void
     {
@@ -44,10 +40,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Setup the database.
-     *
-     * @return void
      */
-    private function setUpDatabase()
+    private function setUpDatabase(): void
     {
         config(['database.default' => 'testing']);
         config(['database.connections.testing.foreign_key_constraints' => true]);
@@ -61,10 +55,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Emulate the local environment.
-     *
-     * @return $this
      */
-    protected function local()
+    protected function local(): self
     {
         $this->env = 'local';
 
@@ -73,10 +65,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Emulate the non-local environment.
-     *
-     * @return $this
      */
-    protected function notLocal()
+    protected function notLocal(): self
     {
         $this->env = 'production';
 
@@ -85,24 +75,18 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Define whether the app is running in console or not.
-     *
-     * @return bool
      */
-    abstract protected function runningInConsole();
+    abstract protected function runningInConsole(): bool;
 
     /**
      * Emulate the "vvv" flag set.
-     *
-     * @return $this
      */
-    abstract protected function withVvv();
+    abstract protected function withVvv(): self;
 
     /**
      * Emulate the app boot.
-     *
-     * @return void
      */
-    protected function boot()
+    protected function boot(): void
     {
         $app = mock(Application::class);
         $app->expects('isLocal')->andReturn($this->env == 'local');
@@ -116,10 +100,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Assert that the database profiler is activated.
-     *
-     * @return void
      */
-    protected function assertDbProfilerActivated()
+    protected function assertDbProfilerActivated(): void
     {
         /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
@@ -129,10 +111,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Assert that the database profiler is not activated.
-     *
-     * @return void
      */
-    protected function assertDbProfilerNotActivated()
+    protected function assertDbProfilerNotActivated(): void
     {
         /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
@@ -142,10 +122,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Assert that the database queries are dumped.
-     *
-     * @return void
      */
-    protected function assertDbQueriesDumped()
+    protected function assertDbQueriesDumped(): void
     {
         $queries = collect([
             '[1]: select * from "posts"',
@@ -194,11 +172,8 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Prepare the query pattern for mocking.
-     *
-     * @param string $query
-     * @return string
      */
-    private function prepareQueryPattern(string $query)
+    private function prepareQueryPattern(string $query): string
     {
         $query = preg_quote($query, '/');
 
@@ -207,8 +182,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     /**
      * Clean up the testing environment before the next test.
-     *
-     * @return void
      */
     protected function tearDown(): void
     {

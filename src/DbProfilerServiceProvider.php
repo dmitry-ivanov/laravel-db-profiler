@@ -12,17 +12,13 @@ class DbProfilerServiceProvider extends ServiceProvider
 {
     /**
      * The query counter.
-     *
-     * @var int
      */
-    private $counter = 1;
+    private int $counter = 1;
 
     /**
      * Register the service provider.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/db-profiler.php', 'db-profiler');
     }
@@ -30,11 +26,9 @@ class DbProfilerServiceProvider extends ServiceProvider
     /**
      * Boot the service provider.
      *
-     * @return void
-     *
      * @noinspection ForgottenDebugOutputInspection
      */
-    public function boot()
+    public function boot(): void
     {
         if (!$this->isEnabled()) {
             return;
@@ -50,10 +44,8 @@ class DbProfilerServiceProvider extends ServiceProvider
 
     /**
      * Check whether database profiling is enabled or not.
-     *
-     * @return bool
      */
-    private function isEnabled()
+    private function isEnabled(): bool
     {
         if (!$this->app->isLocal() && !config('db-profiler.force')) {
             return false;
@@ -66,22 +58,15 @@ class DbProfilerServiceProvider extends ServiceProvider
 
     /**
      * Apply query bindings to the given SQL query.
-     *
-     * @param string $sql
-     * @param array $bindings
-     * @return string
      */
-    private function applyQueryBindings(string $sql, array $bindings)
+    private function applyQueryBindings(string $sql, array $bindings): string
     {
         $bindings = collect($bindings)->map(function ($binding) {
-            switch (gettype($binding)) {
-                case 'boolean':
-                    return (int) $binding;
-                case 'string':
-                    return "'{$binding}'";
-                default:
-                    return $binding;
-            }
+            return match (gettype($binding)) {
+                'boolean' => (int) $binding,
+                'string' => "'{$binding}'",
+                default => $binding,
+            };
         })->toArray();
 
         return Str::replaceArray('?', $bindings, $sql);
