@@ -8,20 +8,16 @@ class HttpProfilingTest extends TestCase
 {
     /**
      * Define whether the app is running in console or not.
-     *
-     * @return bool
      */
-    protected function runningInConsole()
+    protected function runningInConsole(): bool
     {
         return false;
     }
 
     /**
      * Emulate the "vvv" flag set.
-     *
-     * @return $this
      */
-    protected function withVvv()
+    protected function withVvv(): self
     {
         Request::merge(['vvv' => true]);
 

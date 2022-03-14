@@ -6,20 +6,16 @@ class ConsoleProfilingTest extends TestCase
 {
     /**
      * Define whether the app is running in console or not.
-     *
-     * @return bool
      */
-    protected function runningInConsole()
+    protected function runningInConsole(): bool
     {
         return true;
     }
 
     /**
      * Emulate the "vvv" flag set.
-     *
-     * @return $this
      */
-    protected function withVvv()
+    protected function withVvv(): self
     {
         $_SERVER['argv']['-vvv'] = true;
 
