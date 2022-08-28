@@ -17,13 +17,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     use TestingTools;
 
     /**
-     * Indicates if the console output should be mocked.
-     *
-     * @var bool
-     */
-    public $mockConsoleOutput = false;
-
-    /**
      * The emulated environment.
      */
     private string $env;
@@ -49,8 +42,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->artisan('migrate', [
             '--database' => 'testing',
             '--path' => relative_path(__DIR__, base_path()) . '/fixture/database/migrations/',
-        ]);
-        $this->seeInArtisanOutput('Migrated');
+        ])->assertSuccessful();
     }
 
     /**
