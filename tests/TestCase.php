@@ -95,7 +95,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function assertDbProfilerActivated(): void
     {
-        /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
         $dispatcher = $connection->getEventDispatcher();
         $this->assertTrue($dispatcher->hasListeners(QueryExecuted::class));
@@ -106,7 +105,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function assertDbProfilerNotActivated(): void
     {
-        /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
         $dispatcher = $connection->getEventDispatcher();
         $this->assertFalse($dispatcher->hasListeners(QueryExecuted::class));
@@ -177,7 +175,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function tearDown(): void
     {
-        /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
         $dispatcher = $connection->getEventDispatcher();
 
