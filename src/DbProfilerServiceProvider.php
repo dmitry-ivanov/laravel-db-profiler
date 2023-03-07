@@ -25,8 +25,6 @@ class DbProfilerServiceProvider extends ServiceProvider
 
     /**
      * Boot the service provider.
-     *
-     * @noinspection ForgottenDebugOutputInspection
      */
     public function boot(): void
     {
@@ -38,7 +36,7 @@ class DbProfilerServiceProvider extends ServiceProvider
             $i = $this->counter++;
             $sql = $this->applyQueryBindings($query->sql, $query->bindings);
             $time = $query->time;
-            dump("[{$i}]: {$sql}; ({$time} ms)");
+            DbProfilerDumper::dump("[{$i}]: {$sql}; ({$time} ms)");
         });
     }
 

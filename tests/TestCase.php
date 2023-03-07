@@ -2,6 +2,7 @@
 
 namespace Illuminated\Database\Tests;
 
+use Facades\Illuminated\Database\DbProfilerDumper;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
@@ -135,10 +136,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[17]: select * from "posts" where "title" is null and "price" > 123.45',
         ]);
 
-        $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
-        $queries->each(function (string $query) use ($mock) {
+        $queries->each(function (string $query) {
             $queryPattern = $this->prepareQueryPattern($query);
-            $mock->expects('dump')->with(Mockery::pattern($queryPattern));
+            DbProfilerDumper::shouldReceive('dump')->with(Mockery::pattern($queryPattern));
         });
 
         Post::all();
