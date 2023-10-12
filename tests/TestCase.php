@@ -95,7 +95,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function assertDbProfilerActivated(): void
     {
-        /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
         $dispatcher = $connection->getEventDispatcher();
         $this->assertTrue($dispatcher->hasListeners(QueryExecuted::class));
@@ -106,7 +105,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function assertDbProfilerNotActivated(): void
     {
-        /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
         $dispatcher = $connection->getEventDispatcher();
         $this->assertFalse($dispatcher->hasListeners(QueryExecuted::class));
@@ -137,10 +135,12 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[17]: select * from "posts" where "title" is null and "price" > 123.45',
         ]);
 
-        $mock = mock('alias:Symfony\Component\VarDumper\VarDumper');
+        $mock = Mockery::mock();
+        app()->instance('db.idpdumper', $mock);
+
         $queries->each(function (string $query) use ($mock) {
             $queryPattern = $this->prepareQueryPattern($query);
-            $mock->expects('dump')->with(Mockery::pattern($queryPattern));
+            $mock->shouldReceive('dump')->with(Mockery::pattern($queryPattern))->once();
         });
 
         Post::all();
@@ -169,7 +169,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         $query = preg_quote($query, '/');
 
-        return "/{$query}; (.*? ms)/";
+        return "/{$query}; \(.*? ms\)/";
     }
 
     /**
@@ -177,7 +177,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      */
     protected function tearDown(): void
     {
-        /** @var \Illuminate\Database\Connection $connection */
         $connection = DB::connection();
         $dispatcher = $connection->getEventDispatcher();
 

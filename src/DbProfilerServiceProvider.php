@@ -21,12 +21,12 @@ class DbProfilerServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/db-profiler.php', 'db-profiler');
+
+        app()->instance('db.idpdumper', new DbProfilerDumper());
     }
 
     /**
      * Boot the service provider.
-     *
-     * @noinspection ForgottenDebugOutputInspection
      */
     public function boot(): void
     {
@@ -38,7 +38,7 @@ class DbProfilerServiceProvider extends ServiceProvider
             $i = $this->counter++;
             $sql = $this->applyQueryBindings($query->sql, $query->bindings);
             $time = $query->time;
-            dump("[{$i}]: {$sql}; ({$time} ms)");
+            app('db.idpdumper')->dump("[{$i}]: {$sql}; ({$time} ms)");
         });
     }
 
