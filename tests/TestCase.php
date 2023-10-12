@@ -5,7 +5,6 @@ namespace Illuminated\Database\Tests;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
-use Illuminated\Database\DbProfilerDumper;
 use Illuminated\Database\DbProfilerServiceProvider;
 use Illuminated\Database\Tests\App\Post;
 use Illuminated\Testing\TestingTools;
@@ -136,7 +135,9 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
             '[17]: select * from "posts" where "title" is null and "price" > 123.45',
         ]);
 
-        $mock = Mockery::mock('alias:' . DbProfilerDumper::class);
+        $mock = Mockery::mock();
+        app()->instance('db.idpdumper', $mock);
+
         $queries->each(function (string $query) use ($mock) {
             $queryPattern = $this->prepareQueryPattern($query);
             $mock->shouldReceive('dump')->with(Mockery::pattern($queryPattern))->once();
