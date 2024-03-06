@@ -4,9 +4,9 @@
 
 [<img src="https://user-images.githubusercontent.com/1286821/181085373-12eee197-187a-4438-90fe-571ac6d68900.png" alt="Buy me a coffee" width="200" />](https://buymeacoffee.com/dmitry.ivanov)
 
-[![StyleCI](https://github.styleci.io/repos/68023936/shield?branch=master&style=flat)](https://github.styleci.io/repos/68023936?branch=master)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/dmitry-ivanov/laravel-db-profiler/tests.yml?branch=master)](https://github.com/dmitry-ivanov/laravel-db-profiler/actions?query=workflow%3Atests+branch%3Amaster)
-[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-db-profiler/master)](https://app.codecov.io/gh/dmitry-ivanov/laravel-db-profiler/tree/master)
+[![StyleCI](https://github.styleci.io/repos/68023936/shield?branch=10.x&style=flat)](https://github.styleci.io/repos/68023936?branch=10.x)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/dmitry-ivanov/laravel-db-profiler/tests.yml?branch=10.x)](https://github.com/dmitry-ivanov/laravel-db-profiler/actions?query=workflow%3Atests+branch%3A10.x)
+[![Coverage Status](https://img.shields.io/codecov/c/github/dmitry-ivanov/laravel-db-profiler/10.x)](https://app.codecov.io/gh/dmitry-ivanov/laravel-db-profiler/tree/10.x)
 
 ![Packagist Version](https://img.shields.io/packagist/v/illuminated/db-profiler)
 ![Packagist Stars](https://img.shields.io/packagist/stars/illuminated/db-profiler)
@@ -39,7 +39,7 @@ Database Profiler for Laravel Web and Console Applications.
 1. Install the package via Composer:
 
     ```shell script
-    composer require illuminated/db-profiler
+    composer require "illuminated/db-profiler:^10.0"
     ```
 
 2. Use the `vvv` parameter for Web:
