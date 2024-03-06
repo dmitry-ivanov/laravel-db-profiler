@@ -1,4 +1,5 @@
 /.idea
+/.phpunit.cache
 /.vscode
 /vendor
 .DS_Store

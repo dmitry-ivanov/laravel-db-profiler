@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
     backupGlobals="false"
-    backupStaticAttributes="false"
+    backupStaticProperties="false"
     beStrictAboutTestsThatDoNotTestAnything="false"
     beStrictAboutOutputDuringTests="true"
     bootstrap="vendor/autoload.php"
+    cacheDirectory=".phpunit.cache"
     colors="true"
-    convertErrorsToExceptions="true"
-    convertNoticesToExceptions="true"
-    convertWarningsToExceptions="true"
     processIsolation="false"
     stopOnError="false"
     stopOnFailure="false"
-    verbose="true"
 >
     <testsuites>
         <testsuite name="Laravel DB Profiler Test Suite">
@@ -20,12 +17,12 @@
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="true">
+    <source>
         <include>
             <directory suffix=".php">./src</directory>
         </include>
         <exclude>
             <file>./src/DbProfilerDumper.php</file>
         </exclude>
-    </coverage>
+    </source>
 </phpunit>
