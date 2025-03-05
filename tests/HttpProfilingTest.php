@@ -3,6 +3,7 @@
 namespace Illuminated\Database\Tests;
 
 use Illuminate\Support\Facades\Request;
+use PHPUnit\Framework\Attributes\Test;
 
 class HttpProfilingTest extends TestCase
 {
@@ -24,24 +25,24 @@ class HttpProfilingTest extends TestCase
         return $this;
     }
 
-    /** @test */
-    public function it_is_disabled_if_environment_is_not_local()
+    #[Test]
+    public function it_is_disabled_if_environment_is_not_local(): void
     {
         $this->notLocal()->boot();
 
         $this->assertDbProfilerNotActivated();
     }
 
-    /** @test */
-    public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_request_param()
+    #[Test]
+    public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_request_param(): void
     {
         $this->local()->boot();
 
         $this->assertDbProfilerNotActivated();
     }
 
-    /** @test */
-    public function it_is_enabled_if_environment_is_local_and_there_is_vvv_request_param()
+    #[Test]
+    public function it_is_enabled_if_environment_is_local_and_there_is_vvv_request_param(): void
     {
         $this->local()->withVvv()->boot();
 

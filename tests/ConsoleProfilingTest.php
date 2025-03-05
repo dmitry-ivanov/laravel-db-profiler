@@ -2,6 +2,8 @@
 
 namespace Illuminated\Database\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
+
 class ConsoleProfilingTest extends TestCase
 {
     /**
@@ -22,24 +24,24 @@ class ConsoleProfilingTest extends TestCase
         return $this;
     }
 
-    /** @test */
-    public function it_is_disabled_if_environment_is_not_local()
+    #[Test]
+    public function it_is_disabled_if_environment_is_not_local(): void
     {
         $this->notLocal()->boot();
 
         $this->assertDbProfilerNotActivated();
     }
 
-    /** @test */
-    public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_option()
+    #[Test]
+    public function it_is_disabled_if_environment_is_local_but_there_is_no_vvv_option(): void
     {
         $this->local()->boot();
 
         $this->assertDbProfilerNotActivated();
     }
 
-    /** @test */
-    public function it_is_enabled_if_environment_is_local_and_there_is_vvv_option()
+    #[Test]
+    public function it_is_enabled_if_environment_is_local_and_there_is_vvv_option(): void
     {
         $this->local()->withVvv()->boot();
 
@@ -47,8 +49,8 @@ class ConsoleProfilingTest extends TestCase
         $this->assertDbQueriesDumped();
     }
 
-    /** @test */
-    public function it_is_enabled_if_environment_is_not_local_but_there_is_a_force_flag_in_config()
+    #[Test]
+    public function it_is_enabled_if_environment_is_not_local_but_there_is_a_force_flag_in_config(): void
     {
         config(['db-profiler.force' => true]);
 
